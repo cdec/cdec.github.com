@@ -7,6 +7,6 @@ title: cdec - User guide
 - [Downloading and compiling cdec](compiling.html)
 - Building a baseline system
 - Grammar extraction
-- Parameter tuning: MERT / PRO / Rampion
+- [Parameter tuning: MERT / PRO / Rampion ...](../documentation/training.html)
 - Quality evaluation
 - Python interface
