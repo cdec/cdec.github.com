@@ -3,10 +3,7 @@ layout: documentation
 title: cdec - Parameter learnig
 ---
 
-Och's 2002 **M**inimum **E**rror **R**ate **T**raining (MERT) algorithm is widely used in statistical machine translation to optimize the parameters.
 
 ## Further reading
-* Och, 2002
-* Macherey et al., 2008
-* Kumar et al., 2009
-
+* [Phil Blunsom, Trevor Cohn, and Miles Osborne. 2008. A Discriminative Latent Variable Model for Statistical Machine Translation. In *Proc. ACL*.](http://www.aclweb.org/anthology/P/P08/P08-1024.pdf)
+* [Phil Blunsom and Miles Osborne. 2008. Probabilistic Inference for Machine Translation. In *Proc. EMNLP*.](http://aclweb.org/anthology-new/D/D08/D08-1023.pdf)
