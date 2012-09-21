@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,400italic|Droid+Sans+Mono);
 body {
     background: #f3f3f3;
     font: normal 110% Lato, sans-serif;
@@ -33,7 +33,7 @@ ul {
 }
 
 code, pre, tt {
-    font: 12pt Consolas, Monaco, monospace;
+    font: 12pt "Droid Sans Mono", monospace;
     background: #f3f3f3;
     padding: 0.2em;
 }
@@ -73,4 +73,12 @@ header nav li {
 
 header a {
     color: inherit;
+}
+
+article {
+    line-height: 1.7em;
+}
+
+#MathJax_Message {
+    display: none;
 }
