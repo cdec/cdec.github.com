@@ -5,12 +5,12 @@ title: Building cdec from source
 This page gives a basic summary of how to acquire and build the `cdec` source code.  Before starting, you should be familiar with building and installing software on Unix-like platforms.
 
 # Quick start
-[Cdec is hosted at github.](http://github.com/redpony/cdec) Checking out the code and building it looks something like this:
+[Cdec is hosted at github.](http://github.com/redpony/cdec) Checking out the code and building it looks *something* like this (in particular, you may need to specify more options to `./configure`):
 
     git clone git://github.com/redpony/cdec.git
     cd cdec
     autoreconf -ifv
-    ./configure --with-boost=/path/to/boost-install
+    ./configure [--with-boost=/path/to/boost-install]
     make
     ./tests/run-system-tests.pl
 
