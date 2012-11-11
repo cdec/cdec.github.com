@@ -2,7 +2,7 @@
 layout: documentation
 title: Fast and simple word alignment
 ---
-**This document describes how to use the `training/fast_align` tool to create a word alignment for a parallel corpus**.
+**This document describes how to use the `training/fast_align` tool to create a [word alignment](/concepts/alignment.html) for a parallel corpus**.
 
 Internally, `fast_align` implements several simple lexical translation models (slightly improved variants of [IBM Models 1 and 2](http://acl.ldc.upenn.edu/J/J93/J93-2003.pdf)). Under these models, the (conditional) likelihood of a parallel corpus has the general form <span>\\( \prod\_{\mathbf{e},\mathbf{f}} \sum\_{\mathbf{a}} \prod\_i p(a_i \mid \mathbf{f}) \times p(e\_i \mid f\_{a\_i}) \\)</span>, which is very efficient to evaluate. The EM algorithm is used to find model parameters that maximize this likelihood. Then, the single most probable alignment according to the learned parameters is inferred for each sentence pair.
 

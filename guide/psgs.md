@@ -2,7 +2,7 @@
 layout: documentation
 title: Per-sentence grammars
 ---
-Per-sentence grammars are translation grammars that are filtered so as to contain just the rules necessary to translate a single sentence. They are loaded immediately before translation and unloaded when the translation process completes, which minimizes memory consumption.
+Per-sentence grammars are [synchronous context-free grammars](/concepts/scfgs.html) filtered so as to contain just the rules necessary to translate a single sentence. They are loaded immediately before translation and unloaded when the translation process completes, which minimizes memory consumption.
 
 # Marking up input to use per-sentence grammars
 

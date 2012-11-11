@@ -4,5 +4,6 @@ title: cdec - Documentation
 ---
 # Advanced documentation
 
- - [Parameter learning](training.html)
+ - [Parameter learning algorithms](training.html)
+ - [Dynamically loaded feature functions](ext-ff.html)
 
