@@ -1,0 +1,11 @@
+---
+layout: documentation
+title: Per-sentence grammars
+---
+Per-sentence grammars are translation grammars that are filtered so as to contain just the rules necessary to translate a single sentence. They are loaded immediately before translation and unloaded when the translation process completes, which minimizes memory consumption.
+
+# Marking up input to use per-sentence grammars
+
+    <seg grammar="/home/cdec/grammar.125.scfg.gz"> Hier ist ein Satz . </seg>
+    <seg grammar="/home/cdec/grammar.126.scfg.gz"> Ein anderer Satz ! </seg>
+
