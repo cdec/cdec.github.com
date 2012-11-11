@@ -1,0 +1,8 @@
+@InProceedings{cdec,
+  author={Chris Dyer and Adam Lopez and Juri Ganitkevitch and Johnathan Weese
+          and Ferhan Ture and Phil Blunsom and Hendra Setiawan and Vladimir Eidelman and Philip Resnik},
+  title={cdec: A Decoder, Alignment, and Learning Framework for Finite-State and Context-Free Translation Models},
+  booktitle={Proceedings of the Association for Computational Linguistics (ACL)},
+  year={2010}
+}
+
