@@ -9,7 +9,7 @@ title: cdec - User guide
 - Building a baseline system
 - Grammar extraction
 - [Parameter tuning: MERT / PRO / Rampion ...](../documentation/training.html)
-- Quality evaluation
+- [Quality evaluation](evaluation.html)
 - Python interface
 
 # Concepts

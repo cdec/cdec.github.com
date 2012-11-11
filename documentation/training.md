@@ -3,7 +3,7 @@ layout: documentation
 title: cdec - Parameter learnig
 ---
 
-cdec includes implementations of the following parameter learning algorithms:
+`cdec` includes implementations of the following discriminative parameter learning algorithms. Except for conditional likelihood training, other algorithms make use of an [evaluation function](/guide/evaluation.html).
 
 * __[Dynamic Programming MERT (Kumar et al., 2009)](mert.html)__
     * Optimal for small numbers of features
