@@ -6,7 +6,7 @@ Word alignment is the process of identifying words or phrases that correspond in
 ![Alignment Example](/img/align-ex.png)
 
 # Alignment toolkits
-- `cdec` includes a [simple, fast alignment tool](fast_align.html)
+- `cdec` includes a [simple, fast alignment tool](/guide/fast_align.html)
 - [Giza++](http://code.google.com/p/giza-pp/)
 - [Berkeley Aligner](http://code.google.com/p/berkeleyaligner/)
 - [PostCAT](http://www.seas.upenn.edu/~strctlrn/CAT/CAT.html)
