@@ -15,11 +15,11 @@ Any extra options are passed to the external library.
 # Implementing external feature functions
 
 You must implement the following function in the dynamic library containing your external feature function(s):
-    extern "C" FeatureFunction* create_ff(const string& ff_and_args) {
+    extern "C" FeatureFunction* create_ff(const std::string& ff_and_args) {
       return new MyFeatureFunction(ff_and_args);
     }
 
 # Example
 
-An example external feature function is included in `cdec`, in the [`example_extff/` directory](https://github.com/redpony/cdec/tree/master/example_extff).
+An example external feature function is included in `cdec`, in the [`example_extff/`](https://github.com/redpony/cdec/tree/master/example_extff) directory.
 
