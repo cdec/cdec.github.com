@@ -7,6 +7,7 @@ title: cdec - User guide
 - [Synchronous context-free grammars (SCFGs)](scfgs.html)
 - [Word alignments](alignment.html)
 - [Linear translation models](linear-models.html)
+- [Feature functions](feature_functions.html)
 - [Feature weights](weights.html)
 
 # More information

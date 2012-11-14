@@ -2,17 +2,21 @@
 layout: documentation
 title: cdec - Feature functions
 ---
-*Feature functions* compute real-valued features of translation derivations that are used to determine if a particular translation hypothesis is good or bad. Each feature is associated with a real-valued [weight](weights.html) in the [linear translation model](linear-models.html).
+*Feature functions* are functions <span>\\( f : \textbf{f},\textbf{e},\textbf{d} \mapsto \mathbb{R} \\)</span> that compute real-valued (possibly multi-dimensional) features of source sentences (<span>\\( \textbf{f} \\)), target language translations (<span>\\( \textbf{e} \\)), and their [translation derivation](derivations.html) (<span>\\( \textbf{d} \\)) to determine if a particular translation hypothesis is good or bad. Each feature is associated with a real-valued [weight](weights.html) in the [linear translation model](linear-models.html).
 
-Example features include target language model log probabilities, translation probabilities, and word and phrase count features.
+Example features:
 
-# Feature locality
-Features my be classified by whether they are *local* and whether they depend on the source language *context* they occur in.
+ - target language model log probability
+ - generative translation model log probability
+ - target word count
 
- - *Local features* decompose linearly over the rules used in the translation with values depending only on the input and the translation rules.
- - *Non-local features* depend on more than one translation rule.
+# Feature locality and context dependence
+The key to doing efficient prediction with translation models is using features that decompose additively over small pieces of the translation derivation. For example, a generative translation model probability is defined to be the product of the probabilities of several conditionally independent events. In log space, these quantities add, and thus a feature that is the translation model probability can be formulated as the sum of several **local features**.
 
- - *Context independent features* have the same value regardless of the context that a rule is used in
- - *Context dependent features* are not conditionally independent of the input, given the rules used in translation.
+### Source context dependence
 
+ - **Context independent features** have the same value locally regardless of the source language context that the structure occurs in.
+ - **Context dependent features** will have different values depending on the source language context.
+
+### Non-local features
 
