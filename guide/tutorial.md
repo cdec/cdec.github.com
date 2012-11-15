@@ -41,7 +41,8 @@ You can read more about [word alignment](/concepts/alignment.html) and the [`fas
 
 ### 4. Symmetrize word alignments
 Estimated time: **5 seconds**
-    ~/cdec/utils/atools -i training.es-en.fwd_align -j training.es-en.rev_align > training.gdfa
+    ~/cdec/utils/atools -i training.es-en.fwd_align -j training.es-en.rev_align \
+        -c grow-diag-final-and > training.gdfa
 
 ### 5. Compile the training data
 Estimated time: **~1 minute**
@@ -60,6 +61,26 @@ Estimated time: **15 minutes**
 The `-j 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardward capabilities. The extraction process can be slow, so using more processors if they are available is recommended.
 
 You can read more about the [synchronous context-free grammars](/concepts/scfgs.html) that are being extracted in this step.
+
+The grammars extracted in this section are written to the `dev.grammars` and `devtest.grammars` directory; there is one grammar for each sentence in the dev and devtest sets, containing all rules that could potentially apply to that sentence. The following shows 5 rules extracted for the first sentence of the dev set (*la casa blanca ya ha anunciado que , al recibir el premio , hablará de la guerra afgana .*).
+
+    tail -5 dev.grammars/grammar.0 
+
+    [X] ||| de la guerra [X,1] . ||| the war [X,1] . ||| EgivenFCoherent=1.69896996021 SampleCountF=2.39967370033
+    CountEF=0.778151273727 MaxLexFgivenE=1.23959636688 MaxLexEgivenF=0.382706820965 IsSingletonF=0.0 IsSingletonFE
+    =0.0 ||| 0-0 1-0 2-1 4-3
+    [X] ||| de la guerra [X,1] . ||| from the [X,1] war . ||| EgivenFCoherent=2.39793992043 SampleCountF=2.3996737
+    0033 CountEF=0.301030009985 MaxLexFgivenE=0.895682394505 MaxLexEgivenF=1.93757390976 IsSingletonF=0.0 IsSingle
+    tonFE=1.0 ||| 0-0 1-1 2-3 4-4
+    [X] ||| de la guerra [X,1] . ||| of [X,1] war . ||| EgivenFCoherent=2.39793992043 SampleCountF=2.39967370033 C
+    ountEF=0.301030009985 MaxLexFgivenE=1.22095942497 MaxLexEgivenF=0.517585158348 IsSingletonF=0.0 IsSingletonFE=
+    1.0 ||| 0-0 2-2 4-3
+    [X] ||| de la [X,1] afgana . ||| of afghan [X,1] . ||| EgivenFCoherent=0.301030009985 SampleCountF=0.477121263
+    742 CountEF=0.301030009985 MaxLexFgivenE=1.92075574398 MaxLexEgivenF=0.473047554493 IsSingletonF=0.0 IsSinglet
+    onFE=1.0 ||| 0-0 3-1 4-3
+    [X] ||| de la [X,1] afgana . ||| of the afghan [X,1] . ||| EgivenFCoherent=0.301030009985 SampleCountF=0.47712
+    1263742 CountEF=0.301030009985 MaxLexFgivenE=1.31197583675 MaxLexEgivenF=0.796108067036 IsSingletonF=0.0 IsSin
+    gletonFE=1.0 ||| 0-0 1-1 3-2 4-4
 
 ### 7. Build the target language model
 Estimated time: **1 minute**
