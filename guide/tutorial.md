@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: System building tutorial
+title: cdec system building tutorial
 ---
 This tutorial will guide you through the process of creating a Spanish-English statistical machine translation system with `cdec`. To complete this tutorial successfully, you will need:
 
