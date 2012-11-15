@@ -82,6 +82,8 @@ The grammars extracted in this section are written to the `dev.grammars` and `de
     1263742 CountEF=0.301030009985 MaxLexFgivenE=1.31197583675 MaxLexEgivenF=0.796108067036 IsSingletonF=0.0 IsSin
     gletonFE=1.0 ||| 0-0 1-1 3-2 4-4
 
+You can read more about [the cdec grammar format](/documentation/rule-format.html).
+
 ### 7. Build the target language model
 Estimated time: **1 minute**
 
