@@ -14,6 +14,11 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
     make
     ./tests/run-system-tests.pl
 
+# Building the Python extentions
+
+    cd python
+    python setup.py build
+
 # Third-party software dependencies
 **You must have all the software in this section installed somewhere on your system!**
 
