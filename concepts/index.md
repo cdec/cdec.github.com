@@ -4,6 +4,7 @@ title: cdec - User guide
 ---
 # Concepts
 
+- [Parallel corpora](parallel-corpora.html)
 - [Synchronous context-free grammars (SCFGs)](scfgs.html)
 - [Word alignments](alignment.html)
 - [Linear translation models](linear-models.html)
