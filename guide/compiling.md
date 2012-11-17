@@ -30,16 +30,35 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
     - If you build your own boost, you _must install it_ using `bjam install`.
     - Older versions of Boost may work, but problems have been reported on some platforms with older versions.
 - [GNU Flex](http://flex.sourceforge.net/)
+- [Python-2.7](http://docs.python.org/) is required to build the `pycdec` extensions
 
 # Optional software dependencies
 The software in this section is used to configure optional extensions.
 
-- [Python-2.7](http://docs.python.org/) is required to build the `pycdec` extensions
-- [libcmph-2.0](http://cmph.sourceforge.net/) is a perfect hashing function library that can be used to reduce the memory required to represented large numbers of features.
-- [Eigen](http://eigen.tuxfamily.org) is a linear algebra library that is used for some experimental code
-- [MPI](http://www.mpi-forum.org/) is optionally used for some training algorithms
+<table border="1">
+<col width="20%">
+<col width="80%">
+<tr>
+  <td><b>Parameter</b></td>
+  <td><b>Description</b></td>
+</tr>
+<tr>
+  <td><code>--with-meteor</code></td>
+  <td>Makes <a href="http://www.cs.cmu.edu/~alavie/METEOR/">METEOR</a> available for tuning and evaluation. You must specify the full path to the METEOR jar, and Java must be avialable in your path.</td>
+</tr>
+<tr>
+  <td><code>--with-cmph</code></td>
+  <td><a href="http://cmph.sourceforge.net/">libcmph-2.0</a> is a perfect hash function library that can be used to reduce the memory required to work with extremely large numbers of features.</td>
+</tr>
+<tr>
+  <td><code>--enable-mpi</code></td>
+  <td><a href="http://www.mpi-forum.org/">MPI</a> can be optionally used to parallelize some parameter optimization algorithms.</td>
+</tr>
+</table>
+<br />
 
 # Supported Platforms
+
 - Linux and Mac OS X are supported
 - Windows is not supported (however, you may be able to get it to work)
 
