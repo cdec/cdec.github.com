@@ -33,7 +33,7 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
 - [Python-2.7](http://docs.python.org/) is required to build the `pycdec` extensions
 
 # Optional software dependencies
-The software in this section is used to configure optional extensions.
+The software in this section is optional. The extensions are configured with command line options to the `./configure` script prior to compilation.
 
 <table border="1">
 <col width="20%">
@@ -44,7 +44,7 @@ The software in this section is used to configure optional extensions.
 </tr>
 <tr>
   <td><code>--with-meteor</code></td>
-  <td>Makes <a href="http://www.cs.cmu.edu/~alavie/METEOR/">METEOR</a> available for tuning and evaluation. You must specify the full path to the METEOR jar, and Java must be avialable in your path.</td>
+  <td>Makes <a href="http://www.cs.cmu.edu/~alavie/METEOR/">METEOR</a> available for tuning and evaluation. You must specify the full path to the METEOR jar, and Java must be available in your path.</td>
 </tr>
 <tr>
   <td><code>--with-cmph</code></td>
