@@ -131,6 +131,7 @@ You can read more about [the cdec grammar format](/documentation/rule-format.htm
 **Exercises:**
 
  - If you use denser alignments (e.g., those produced by the `union` symmetrization heuristic) or sparser alignments (e.g., those produced by `intersect`), how do the number and quality of rules change?
+ - How would you add a *phrase count feature*, which adds a count of the rules used in the derivation to the model?
  - Come up with a feature or features whose value can be computed using information just found in the grammar rules (i.e., the source and target RHS yields). Write code to implement it and add it to the grammars. You will need to add a weight for each feature you add to your weights file (discussed below) and then rerun MERT.
 
 </section>
@@ -153,6 +154,8 @@ You can read more about [language models](/concepts/language-models.html).
 Estimated time: **5 seconds**
 
     ~/cdec/klm/lm/build_binary nc.lm nc.klm
+
+This compiles the language model produced by `ngram-count` into an efficient binary format that can shared in memory among multiple processes running on the same system.
 
 </section>
 <section>
