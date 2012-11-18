@@ -2,7 +2,7 @@
 layout: documentation
 title: Fast and simple word alignment
 ---
-**This document describes how to use the `training/fast_align` tool to create a [word alignment](/concepts/alignment.html) for a parallel corpus**.
+**This document describes how to use the `word-aligner/fast_align` tool to create a [word alignment](/concepts/alignment.html) for a parallel corpus**.
 
 Internally, `fast_align` implements several simple lexical translation models (slightly improved variants of [IBM Models 1 and 2](http://acl.ldc.upenn.edu/J/J93/J93-2003.pdf)). Under these models, the (conditional) likelihood of a parallel corpus has the general form <span>\\( \prod\_{\mathbf{e},\mathbf{f}} \sum\_{\mathbf{a}} \prod\_i p(a_i \mid \mathbf{f}) \times p(e\_i \mid f\_{a\_i}) \\)</span>, which is very efficient to evaluate. The EM algorithm is used to find model parameters that maximize this likelihood. Then, the single most probable alignment according to the learned parameters is inferred for each sentence pair.
 
@@ -17,7 +17,7 @@ Most `cdec` tools, including `fast_align`, use a simple text format to represent
 
 The aligner can be run with the following command:
 
-    ./training/fast_align -i corpus.de-en -d -v > corpus.de-en.fwd_align
+    ./word-aligner/fast_align -i corpus.de-en -d -v > corpus.de-en.fwd_align
 
 The following options are used:
 
@@ -35,7 +35,7 @@ The output is written to a file with as many lines as the input file as a sequen
 
 You can also run the aligner in *reverse mode* with the `-r` option, which indicates to the aligner to use the *right* sentence as the *source* and the *left* as the *target*.
 
-    ./training/fast_align -r -d -v -i corpus.de-en > corpus.de-en.rev_align
+    ./word-aligner/fast_align -r -d -v -i corpus.de-en > corpus.de-en.rev_align
 
 # Symmetrizing forward and reverse alignments
 

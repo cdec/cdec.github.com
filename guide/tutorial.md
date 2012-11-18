@@ -54,8 +54,8 @@ This step filters out sentence pairs that are either very long or have a very un
 <section>
 ### 3. Run word bidirectional word alignments
 Estimated time: **~10 minutes**
-    ~/cdec/training/fast_align -i training.es-en -d -v > training.es-en.fwd_align
-    ~/cdec/training/fast_align -i training.es-en -d -v -r > training.es-en.rev_align
+    ~/cdec/word-aligner/fast_align -i training.es-en -d -v > training.es-en.fwd_align
+    ~/cdec/word-aligner/fast_align -i training.es-en -d -v -r > training.es-en.rev_align
 
 You can read more about [word alignment](/concepts/alignment.html) and the [`fast_align` alignment tool](fast_align.html).
 
@@ -193,7 +193,7 @@ You can read more about [feature weights](/concepts/weights.html).
 ### 10. Tune system using development data with MERT
 Estimated time: **20-40 minutes**
 
-    ~/cdec/dpmert/dpmert.pl -w weights.init -d dev.lc-tok.es-en.sgm -c cdec.ini -j 2
+    ~/cdec/training/dpmert/dpmert.pl -w weights.init -d dev.lc-tok.es-en.sgm -c cdec.ini -j 2
 
 The `-j 2` option tells MERT to use 2 processors for decoding and optimization. This can be adjusted based on your hardware capabilities.
 
@@ -214,7 +214,7 @@ You can read more about [linear models](/concepts/linear-models.html), [discrimi
 ### 11. Evaluate test set using trained weights
 Estimated time: **5 minutes**
 
-    ~/cdec/dpmert/decode-and-evaluate.pl -c cdec.ini -w dpmert/weights.final -i devtest.lc-tok.es-en.sgm -j 2
+    ~/cdec/training/utils/decode-and-evaluate.pl -c cdec.ini -w dpmert/weights.final -i devtest.lc-tok.es-en.sgm -j 2
 
 
 This will produce a score report that will look something like the following:
