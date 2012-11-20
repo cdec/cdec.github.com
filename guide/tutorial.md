@@ -16,7 +16,7 @@ title: cdec system building tutorial
  - [Compile `cdec`](compiling.html) and run `tests/run-system-tests.pl`
  - Build the `pycdec` Python language extensions to `cdec`
  - Download and compile [SRILM](http://www.speech.sri.com/projects/srilm/download.html) (for estimating the language model)
- - Download and untar [`cdec-spanish-demo.tar.gz`](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) (16.7 MB)
+ - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) (16.7 MB)
 
 </section>
 <section>
@@ -126,7 +126,7 @@ The grammars extracted in this section are written to the `dev.grammars` and `de
     1263742 CountEF=0.301030009985 MaxLexFgivenE=1.31197583675 MaxLexEgivenF=0.796108067036 IsSingletonF=0.0 IsSin
     gletonFE=1.0 ||| 0-0 1-1 3-2 4-4
 
-You can read more about [the cdec grammar format](/documentation/rule-format.html).
+You can read more about [the cdec grammar format](/documentation/grammar-format.html) to understand the contents of these files.
 
 **Exercises:**
 
