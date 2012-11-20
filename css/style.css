@@ -6,6 +6,15 @@ body {
     color: #555;
 }
 
+*.footer {
+  font-size: 75%;
+  color: #888;
+  padding-top: 6px;
+  padding-bottom: 14px;
+  overflow: hidden;
+  clear: both;
+}
+
 body > * {
     width: 920px;
     padding: 20px;
@@ -82,3 +91,4 @@ article {
 #MathJax_Message {
     display: none;
 }
+
