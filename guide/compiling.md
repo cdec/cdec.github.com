@@ -23,8 +23,9 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
 **You must have all the software in this section installed somewhere on your system!**
 
 - [Git](http://git-scm.com/), to check out the source code
-- [Autoconf / Automake / Libtool](http://www.gnu.org/software/autoconf/) - is used to configure the build environment.
+- [Autoconf / Automake](http://www.gnu.org/software/autoconf/) - is used to configure the build environment.
     - Older versions of GNU autotools may not work properly.
+- [Libtool](http://www.gnu.org/software/libtool/) is also required by autotools.
 - A relatively recent version of a C++ compiler, for example [gcc](http://gcc.gnu.org/).
 - [Boost C++ libraries (version 1.44 or later)](http://www.boost.org/).
     - If you build your own boost, you _must install it_ using `bjam install`.
