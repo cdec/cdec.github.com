@@ -17,13 +17,14 @@ Most `cdec` tools, including `fast_align`, use a simple text format to represent
 
 The aligner can be run with the following command:
 
-    ./word-aligner/fast_align -i corpus.de-en -d -v > corpus.de-en.fwd_align
+    ./word-aligner/fast_align -i corpus.de-en -d -v -o > corpus.de-en.fwd_align
 
 The following options are used:
 
 - The `-i corpus.de-en` specifies the input file.
 - The `-d` indicates to use a prior on the alignment points that favors alignments that are close to "diagonal".
 - The `-v` indicates to infer parameters assuming a symmetric Dirichlet prior on the lexical translation distributions.
+- The `-o` indicates to optimize how strongly diagonal alignments are favored.
 
 The output is written to a file with as many lines as the input file as a sequence of *source-target* pairs, identical to the format used for word alignment files by tools like Moses and Joshua. Here is an example alignment of the above parallel corpus:
 
@@ -35,7 +36,7 @@ The output is written to a file with as many lines as the input file as a sequen
 
 You can also run the aligner in *reverse mode* with the `-r` option, which indicates to the aligner to use the *right* sentence as the *source* and the *left* as the *target*.
 
-    ./word-aligner/fast_align -r -d -v -i corpus.de-en > corpus.de-en.rev_align
+    ./word-aligner/fast_align -r -d -v -o -i corpus.de-en > corpus.de-en.rev_align
 
 # Symmetrizing forward and reverse alignments
 

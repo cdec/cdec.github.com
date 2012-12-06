@@ -2,7 +2,10 @@
 layout: default
 title: cdec system building tutorial
 ---
-<section> This tutorial will guide you through the process of creating a Spanish-English statistical machine translation system with `cdec`. To complete this tutorial successfully, you will need:
+
+<section>
+
+This tutorial will guide you through the process of creating a Spanish-English statistical machine translation system with `cdec`. To complete this tutorial successfully, you will need:
 
  - About 1 hour of time
  - A Linux or MacOS X system with at least 2GB RAM
@@ -54,8 +57,8 @@ This step filters out sentence pairs that are either very long or have a very un
 <section>
 ### 3. Run word bidirectional word alignments
 Estimated time: **~10 minutes**
-    ~/cdec/word-aligner/fast_align -i training.es-en -d -v > training.es-en.fwd_align
-    ~/cdec/word-aligner/fast_align -i training.es-en -d -v -r > training.es-en.rev_align
+    ~/cdec/word-aligner/fast_align -i training.es-en -d -v -o > training.es-en.fwd_align
+    ~/cdec/word-aligner/fast_align -i training.es-en -d -v -o -r > training.es-en.rev_align
 
 You can read more about [word alignment](/concepts/alignment.html) and the [`fast_align` alignment tool](fast_align.html).
 
