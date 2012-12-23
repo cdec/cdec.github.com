@@ -183,6 +183,7 @@ Create a `weights.init` file (MERT requires that you list the features you want 
     MaxLexEgivenF -0.1
     PassThrough -0.1
     SampleCountF -0.1
+    WordPenalty -0.1
 
 You can read more about [feature weights](/concepts/weights.html).
 
