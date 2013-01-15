@@ -7,7 +7,7 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
 # Download the source code
 You have two options for retrieving the code. The first (and simplest) option is to use a prepackaged source archive:
 
-    wget http://www.ark.cs.cmu.edu/cdyer/cdec-2013-01-15.tar
+    wget http://www.ark.cs.cmu.edu/cdyer/cdec-2013-01-15.tar.gz
 
 # Configuring and compiling
 Configuring and building the code looks *something* like this (depending on your system configuration and requirements, you may need to specify more options to `./configure`):
