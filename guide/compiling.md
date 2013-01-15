@@ -4,12 +4,22 @@ title: Building cdec from source
 ---
 This page gives a basic summary of how to acquire and build the `cdec` source code.  Before starting, you should be familiar with building and installing software on Unix-like platforms.
 
-# Quick start
-[Cdec is hosted at github.](http://github.com/redpony/cdec) Checking out the code and building it looks *something* like this (in particular, you may need to specify more options to `./configure`):
+# Getting the source code
+You have two options for retrieving the code. The first (and simplest) option is to use a prepackaged source archive:
+
+    wget http://www.ark.cs.cmu.edu/cdyer/cdec-2013-01-15.tar
+
+If you intend to make changes to the code, you will want to clone the central git repository, [which is hosted at github.](http://github.com/redpony/cdec) Checking out the code is simple enough:
 
     git clone git://github.com/redpony/cdec.git
     cd cdec
     autoreconf -ifv
+
+To work with the `cdec` from the repository, your system will require that your system has recent versions of [Autoconf](http://www.gnu.org/software/autoconf/), [Automake](http://www.gnu.org/software/automake/), and [Libtool](libtool).
+
+# Configuring and compiling
+Configuring and building the code looks *something* like this (depending on your system and requirements, you may need to specify more options to `./configure`):
+
     ./configure [--with-boost=/path/to/boost-install]
     make
     ./tests/run-system-tests.pl
