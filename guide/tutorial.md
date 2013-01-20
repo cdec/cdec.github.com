@@ -62,7 +62,7 @@ You can read more about [word alignment](/concepts/alignment.html) and the [`fas
  - Visualize the outputs of the word aligner with the `~/cdec/utils/atools -c display -i FILE.ALIGNS`. How do the forward and reverse alignments differ?
  - The `-d` option causes the aligner to favor "diagonal" alignments. How do the alignments change without this flag?
  - Most unsupervised aligners work by maximizing the likelihood of the training data. The `-v` option instructs the aliger to favor model parameters that make a small number of very confident decisions, rather than purely trying to maximizing the likelihood. How do the alignments differ with and without this flag?
- - Download another alignment toolkit (a list can be found [here](fast_align.html)) and compare the alignments it produces to the ones produced by `fast_align`.
+ - Download another alignment toolkit (a list can be found [here](/concepts/alignment.html)) and compare the alignments it produces to the ones produced by `fast_align`.
 
 </section>
 <section>
