@@ -155,6 +155,14 @@ Create a `cdec.ini` file with the following contents, making sure to substitute 
     feature_function=WordPenalty
     feature_function=KLanguageModel $DEMO_ROOT/nc.klm
 
+**Exercises:**
+
+  - You should be able to run the decoder with the command `~/cdec/decoder/cdec -c cdec.ini`.
+
+</section>
+<section>
+### 10. Create a `weights.init` file
+
 Create a `weights.init` file (MERT requires that you list the features you want to optimize):
     CountEF 0.1
     EgivenFCoherent -0.1
@@ -178,7 +186,7 @@ You can read more about [feature weights](/concepts/weights.html).
 
 </section>
 <section>
-### 10. Tune system using development data with MERT
+### 11. Tune system using development data with MERT
 Estimated time: **20-40 minutes**
 
     ~/cdec/training/dpmert/dpmert.pl -w weights.init -d dev.lc-tok.es-en.sgm -c cdec.ini -j 2
@@ -199,7 +207,7 @@ You can read more about [linear models](/concepts/linear-models.html), [discrimi
 
 </section>
 <section>
-### 11. Evaluate test set using trained weights
+### 12. Evaluate test set using trained weights
 Estimated time: **5 minutes**
 
     ~/cdec/training/utils/decode-and-evaluate.pl -c cdec.ini -w dpmert/weights.final -i devtest.lc-tok.es-en.sgm -j 2
