@@ -18,7 +18,6 @@ This tutorial will guide you through the process of creating a Spanish-English s
 
  - [Compile `cdec`](compiling.html) and run `tests/run-system-tests.pl`
  - Build the `pycdec` Python language extensions to `cdec`
- - Download and compile [SRILM](http://www.speech.sri.com/projects/srilm/download.html) (for estimating the language model)
  - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) (16.7 MB)
 
 </section>
@@ -143,7 +142,7 @@ You can read more about [the cdec grammar format](/documentation/grammar-format.
 Estimated time: **1 minute**
 
     ~/cdec/corpus/cut-corpus.pl 2 training.es-en |
-       ~/srilm/bin/i686/ngram-count -unk -text - -interpolate -kndiscount -order 3 -lm nc.lm
+       ~/cdec/klm/lm/builder/builder --order 3 > nc.lm
 
 You can read more about [language models](/concepts/language-models.html).
 
