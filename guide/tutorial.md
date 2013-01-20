@@ -47,6 +47,7 @@ This step filters out sentence pairs that have over 80 words (in either language
 **Exercises:**
 
  - Compare `nc.lc-tok.es-en` and `training.es-en` to see what sentence pairs were removed. Were these good translations or not?
+ - Try changing the maximum sentence length from `80` to something much smaller or much larger, and running the remaining steps. How does the affect the score?
 
 </section>
 <section>
