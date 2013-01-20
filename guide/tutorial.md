@@ -40,9 +40,9 @@ Read more about the [data format](/documentation/corpus-format.html) used for pa
 ### 2. Filter training corpus sentence lengths
 Estimated time: **20 seconds**.
 
-    ~/cdec/corpus/filter-length.pl nc.lc-tok.es-en > training.es-en
+    ~/cdec/corpus/filter-length.pl -80 nc.lc-tok.es-en > training.es-en
 
-This step filters out sentence pairs that are either very long or have a very unusual length ratio (relative to the corpus average). This tends to remove sentence pairs that are either misaligned or will be hard to model.
+This step filters out sentence pairs that have over 80 words (in either language) or have an very unusual length ratio, relative to the corpus average. This tends to remove sentence pairs that are either misaligned or will be hard to model.
 
 **Exercises:**
 
