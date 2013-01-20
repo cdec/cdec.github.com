@@ -55,7 +55,10 @@ pre {
 
 pre code {
     padding: 0;
-    font-size: 90%;
+    display: block;
+    font-size: 66%;
+    width: auto;
+    overflow: auto;
 }
 
 header {

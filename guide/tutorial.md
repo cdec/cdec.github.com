@@ -24,14 +24,10 @@ This tutorial will guide you through the process of creating a Spanish-English s
 <section>
 ### 1. Tokenize and lowercase the training, dev, and devtest data
 Estimated time: **~2 minutes**
-    ~/cdec/corpus/tokenize-anything.sh < training/news-commentary-v7.es-en |
-       ~/cdec/corpus/lowercase.pl > nc.lc-tok.es-en
-
-    ~/cdec/corpus/tokenize-anything.sh < dev/2010.es-en |
-       ~/cdec/corpus/lowercase.pl > dev.lc-tok.es-en
-
-    ~/cdec/corpus/tokenize-anything.sh < devtest/2011.es-en |
-       ~/cdec/corpus/lowercase.pl > devtest.lc-tok.es-en
+    ~/cdec/corpus/tokenize-anything.sh < training/news-commentary-v7.es-en | ~/cdec/corpus/lowercase.pl > nc.lc-tok.es-en
+    ~/cdec/corpus/tokenize-anything.sh < dev/2010.es-en | ~/cdec/corpus/lowercase.pl > dev.lc-tok.es-en
+    ~/cdec/corpus/tokenize-anything.sh < devtest/2011.es-en | ~/cdec/corpus/lowercase.pl > devtest.lc-tok.es-en
+    
 
 Read more about the [data format](/documentation/corpus-format.html) used for parallel corpora.
 
@@ -72,8 +68,8 @@ You can read more about [word alignment](/concepts/alignment.html) and the [`fas
 <section>
 ### 4. Symmetrize word alignments
 Estimated time: **5 seconds**
-    ~/cdec/utils/atools -i training.es-en.fwd_align -j training.es-en.rev_align \
-        -c grow-diag-final-and > training.gdfa
+    ~/cdec/utils/atools -i training.es-en.fwd_align -j training.es-en.rev_align -c grow-diag-final-and > training.gdfa
+    
 
 **Exercises:**
 
@@ -102,8 +98,7 @@ This step compiles the parallel training data (in `training.es-en`) into a data 
 Estimated time: **15 minutes**
 
     python -m cdec.sa.extract -c extract.ini -g dev.grammars -j 2 < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
-    python -m cdec.sa.extract -c extract.ini -g devtest.grammars -j 2 <
-        devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
+    python -m cdec.sa.extract -c extract.ini -g devtest.grammars -j 2 < devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
 The `-j 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardward capabilities. The extraction process can be slow, so using more processors if they are available is recommended.
 
 You can read more about the [synchronous context-free grammars](/concepts/scfgs.html) that are being extracted in this step.
@@ -112,21 +107,12 @@ The grammars extracted in this section are written to the `dev.grammars` and `de
 
     tail -5 dev.grammars/grammar.0 
 
-    [X] ||| de la guerra [X,1] . ||| the war [X,1] . ||| EgivenFCoherent=1.69896996021 SampleCountF=2.39967370033
-    CountEF=0.778151273727 MaxLexFgivenE=1.23959636688 MaxLexEgivenF=0.382706820965 IsSingletonF=0.0 IsSingletonFE
-    =0.0 ||| 0-0 1-0 2-1 4-3
-    [X] ||| de la guerra [X,1] . ||| from the [X,1] war . ||| EgivenFCoherent=2.39793992043 SampleCountF=2.3996737
-    0033 CountEF=0.301030009985 MaxLexFgivenE=0.895682394505 MaxLexEgivenF=1.93757390976 IsSingletonF=0.0 IsSingle
-    tonFE=1.0 ||| 0-0 1-1 2-3 4-4
-    [X] ||| de la guerra [X,1] . ||| of [X,1] war . ||| EgivenFCoherent=2.39793992043 SampleCountF=2.39967370033 C
-    ountEF=0.301030009985 MaxLexFgivenE=1.22095942497 MaxLexEgivenF=0.517585158348 IsSingletonF=0.0 IsSingletonFE=
-    1.0 ||| 0-0 2-2 4-3
-    [X] ||| de la [X,1] afgana . ||| of afghan [X,1] . ||| EgivenFCoherent=0.301030009985 SampleCountF=0.477121263
-    742 CountEF=0.301030009985 MaxLexFgivenE=1.92075574398 MaxLexEgivenF=0.473047554493 IsSingletonF=0.0 IsSinglet
-    onFE=1.0 ||| 0-0 3-1 4-3
-    [X] ||| de la [X,1] afgana . ||| of the afghan [X,1] . ||| EgivenFCoherent=0.301030009985 SampleCountF=0.47712
-    1263742 CountEF=0.301030009985 MaxLexFgivenE=1.31197583675 MaxLexEgivenF=0.796108067036 IsSingletonF=0.0 IsSin
-    gletonFE=1.0 ||| 0-0 1-1 3-2 4-4
+    [X] ||| de la guerra [X,1] . ||| the war [X,1] . ||| EgivenFCoherent=1.69896996021 SampleCountF=2.39967370033 CountEF=0.778151273727 MaxLexFgivenE=1.23959636688 MaxLexEgivenF=0.382706820965 IsSingletonF=0.0 IsSingletonFE=0.0 ||| 0-0 1-0 2-1 4-3
+    [X] ||| de la guerra [X,1] . ||| from the [X,1] war . ||| EgivenFCoherent=2.39793992043 SampleCountF=2.39967370033 CountEF=0.301030009985 MaxLexFgivenE=0.895682394505 MaxLexEgivenF=1.93757390976 IsSingletonF=0.0 IsSingletonFE=1.0 ||| 0-0 1-1 2-3 4-4
+    [X] ||| de la guerra [X,1] . ||| of [X,1] war . ||| EgivenFCoherent=2.39793992043 SampleCountF=2.39967370033 CountEF=0.301030009985 MaxLexFgivenE=1.22095942497 MaxLexEgivenF=0.517585158348 IsSingletonF=0.0 IsSingletonFE=1.0 ||| 0-0 2-2 4-3
+    [X] ||| de la [X,1] afgana . ||| of afghan [X,1] . ||| EgivenFCoherent=0.301030009985 SampleCountF=0.477121263742 CountEF=0.301030009985 MaxLexFgivenE=1.92075574398 MaxLexEgivenF=0.473047554493 IsSingletonF=0.0 IsSingletonFE=1.0 ||| 0-0 3-1 4-3
+    [X] ||| de la [X,1] afgana . ||| of the afghan [X,1] . ||| EgivenFCoherent=0.301030009985 SampleCountF=0.477121263742 CountEF=0.301030009985 MaxLexFgivenE=1.31197583675 MaxLexEgivenF=0.796108067036 IsSingletonF=0.0 IsSingletonFE=1.0 ||| 0-0 1-1 3-2 4-4
+    
 
 You can read more about [the cdec grammar format](/documentation/grammar-format.html) to understand the contents of these files.
 
@@ -141,8 +127,7 @@ You can read more about [the cdec grammar format](/documentation/grammar-format.
 ### 7. Build the target language model
 Estimated time: **1 minute**
 
-    ~/cdec/corpus/cut-corpus.pl 2 training.es-en |
-       ~/cdec/klm/lm/builder/builder --order 3 > nc.lm
+    ~/cdec/corpus/cut-corpus.pl 2 training.es-en | ~/cdec/klm/lm/builder/builder --order 3 > nc.lm
 
 You can read more about [language models](/concepts/language-models.html).
 
