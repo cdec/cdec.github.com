@@ -58,12 +58,12 @@ The software in this section is optional. The extensions are configured with com
 
 # Getting `cdec` from GitHub
 
-If you intend to make changes to the `cdec` code, you will want to clone cdec from the central git repository, [which is hosted at github.](http://github.com/redpony/cdec) Checking out the code is simple enough:
+If you intend to make changes to the `cdec` code, you will need to clone cdec from the central git repository, [which is hosted at github.](http://github.com/redpony/cdec) Checking out the code is simple enough:
 
     git clone git://github.com/redpony/cdec.git
     cd cdec
 
-Prior to building the software, you will need to generate the configuration and make scripts. Doing this requires recent versions of [Autoconf](http://www.gnu.org/software/autoconf/), [Automake](http://www.gnu.org/software/automake/), and [Libtool](libtool).
+Prior to building the software for the first time, or when you make certain kinds of changes (such as adding new files), you will need to generate the configuration and make scripts. Doing this requires recent versions of [Autoconf](http://www.gnu.org/software/autoconf/), [Automake](http://www.gnu.org/software/automake/), and [Libtool](libtool).
 
     autoreconf -ifv
 
