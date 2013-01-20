@@ -40,7 +40,7 @@ You can also run the aligner in *reverse mode* with the `-r` option, which indic
 
 # Symmetrizing forward and reverse alignments
 
-The "forward" and "reverse" alignments can be symmetrized using the `utils/atools` command:
+The “forward” and “reverse” alignments can be symmetrized using the `utils/atools` command:
 
     ./utils/atools -i corpus.de-en.fwd_align -j corpus.de-en.rev_align -c grow-diag-final-and > corpus.de-en.gdfa
 
