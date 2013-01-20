@@ -215,13 +215,14 @@ Estimated time: **5 minutes**
 
 
 This will produce a score report that will look something like the following:
+
     ### SCORE REPORT #############################################################
+            OUTPUT=eval.devtest.lc-tok.es-en.20130020-020502/test.trans
       SCRIPT INPUT=devtest.lc-tok.es-en.sgm
-            OUTPUT=eval.devtest.lc-tok.es-en.20121014-194914/test.trans
-     DECODER INPUT=eval.devtest.lc-tok.es-en.20121014-194914/test.input
-        REFERENCES=eval.devtest.lc-tok.es-en.20121014-194914/test.refs
+     DECODER INPUT=eval.devtest.lc-tok.es-en.20130020-020502/test.input
+        REFERENCES=eval.devtest.lc-tok.es-en.20130020-020502/test.refs
     ------------------------------------------------------------------------------
-              BLEU=0.273918
-               TER=0.547938
+              BLEU=0.276857
+               TER=0.535396
     ##############################################################################
 
