@@ -16,9 +16,9 @@ This tutorial will guide you through the process of creating a Spanish-English s
 <section>
 ### 0. Prerequisites
 
- - [Compile `cdec`](compiling.html) and run `tests/run-system-tests.pl`
- - Build the `pycdec` Python language extensions to `cdec`
- - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) (16.7 MB)
+ - [Download and compile `cdec`](compiling.html)
+   - Make sure you build the `pycdec` Python language extensions to `cdec`
+ - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) for this demo (16.7 MB)
 
 </section>
 <section>
