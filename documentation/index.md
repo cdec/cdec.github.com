@@ -8,5 +8,5 @@ title: cdec - Documentation
  - [Parameter learning algorithms](training.html)
  - [Dynamically loaded feature functions](ext-ff.html)
  - [*k*-best lists](kbest.html)
- - [Syncronous context-free grammar rule format](rule-format.html)
+ - [Syncronous context-free grammar rule format](grammar-format.html)
 
