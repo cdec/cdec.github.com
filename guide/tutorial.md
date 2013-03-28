@@ -1,9 +1,7 @@
 ---
-layout: default
+layout: documentation
 title: cdec system building tutorial
 ---
-
-<section>
 
 This tutorial will guide you through the process of creating a Spanish-English statistical machine translation system with `cdec`. To complete this tutorial successfully, you will need:
 
@@ -12,17 +10,17 @@ This tutorial will guide you through the process of creating a Spanish-English s
  - At least least 2GB disk space
  - Python 2.7 or newer
 
-</section>
-<section>
-### 0. Prerequisites
+<hr/>
+
+## 0. Prerequisites
 
  - [Download and compile `cdec`](compiling.html)
    - Make sure you build the `pycdec` Python language extensions to `cdec`
  - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) for this demo (16.7 MB)
 
-</section>
-<section>
-### 1. Tokenize and lowercase the training, dev, and devtest data
+<hr/>
+
+## 1. Tokenize and lowercase the training, dev, and devtest data
 Estimated time: **~2 minutes**
     ~/cdec/corpus/tokenize-anything.sh < training/news-commentary-v7.es-en | ~/cdec/corpus/lowercase.pl > nc.lc-tok.es-en
     ~/cdec/corpus/tokenize-anything.sh < dev/2010.es-en | ~/cdec/corpus/lowercase.pl > dev.lc-tok.es-en
@@ -35,9 +33,9 @@ Read more about the [data format](/documentation/corpus-format.html) used for pa
 
  - Tokenization (making punctuation into white-space delimited tokens) and lowercasing are techniques for reducing data sparsity. Try running the tutorial without these.
 
-</section>
-<section>
-### 2. Filter training corpus sentence lengths
+<hr/>
+
+## 2. Filter training corpus sentence lengths
 Estimated time: **20 seconds**.
 
     ~/cdec/corpus/filter-length.pl -80 nc.lc-tok.es-en > training.es-en
@@ -49,9 +47,9 @@ This step filters out sentence pairs that have over 80 words (in either language
  - Compare `nc.lc-tok.es-en` and `training.es-en` to see what sentence pairs were removed. Were these good translations or not?
  - Try changing the maximum sentence length from `80` to something much smaller or much larger, and running the remaining steps. How does the affect the score?
 
-</section>
-<section>
-### 3. Run word bidirectional word alignments
+<hr/>
+
+## 3. Run word bidirectional word alignments
 Estimated time: **~10 minutes**
     ~/cdec/word-aligner/fast_align -i training.es-en -d -v -o > training.es-en.fwd_align
     ~/cdec/word-aligner/fast_align -i training.es-en -d -v -o -r > training.es-en.rev_align
@@ -65,9 +63,9 @@ You can read more about [word alignment](/concepts/alignment.html) and the [`fas
  - Most unsupervised aligners work by maximizing the likelihood of the training data. The `-v` option instructs the aliger to favor model parameters that make a small number of very confident decisions, rather than purely trying to maximizing the likelihood. How do the alignments differ with and without this flag?
  - Download another alignment toolkit (a list can be found [here](/concepts/alignment.html)) and compare the alignments it produces to the ones produced by `fast_align`.
 
-</section>
-<section>
-### 4. Symmetrize word alignments
+<hr/>
+
+## 4. Symmetrize word alignments
 Estimated time: **5 seconds**
     ~/cdec/utils/atools -i training.es-en.fwd_align -j training.es-en.rev_align -c grow-diag-final-and > training.gdfa
     
@@ -77,9 +75,9 @@ Estimated time: **5 seconds**
  - How do the symmetrized alignments (in `training.gdfa`) differ from the forward and reverse alignments?
  - Try out other symmetrization heuristics (e.g., `grow-diag-final`, `union`, and `intersect`) to see how the resulting alignments differ.
 
-</section>
-<section>
-### 5. Compile the training data
+<hr/>
+
+## 5. Compile the training data
 Estimated time: **~1 minute**
 
 *This step assumes your shell is `bash`*.
@@ -93,9 +91,9 @@ This step compiles the parallel training data (in `training.es-en`) into a data 
 
  - Try creating a parallel corpus consisting of two copies (concatenated one after the other) of the training data, but with two different kinds of alignments (e.g, produced by different symmetrization heuristics or by different alignment toolkits). Observe how this changes the downstream grammars and system performance.
 
-</section>
-<section>
-### 6. Extract grammars for the dev and devtest sets
+<hr/>
+
+## 6. Extract grammars for the dev and devtest sets
 Estimated time: **15 minutes**
 
     python -m cdec.sa.extract -c extract.ini -g dev.grammars -j 2 < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
@@ -123,9 +121,9 @@ You can read more about [the cdec grammar format](/documentation/grammar-format.
  - How would you add a *phrase count feature*, which adds a count of the rules used in the derivation to the model?
  - Come up with a feature or features whose value can be computed using information just found in the grammar rules (i.e., the source and target RHS yields). Write code to implement it and add it to the grammars. You will need to add a weight for each feature you add to your weights file (discussed below) and then rerun MERT.
 
-</section>
-<section>
-### 7. Build the target language model
+<hr/>
+
+## 7. Build the target language model
 Estimated time: **1 minute**
 
     ~/cdec/corpus/cut-corpus.pl 2 training.es-en | ~/cdec/klm/lm/builder/builder --order 3 > nc.lm
@@ -136,18 +134,18 @@ You can read more about [language models](/concepts/language-models.html).
 
  - Try varying the order of the language model. How does the size of the model file change? How does the translation quality change?
 
-</section>
-<section>
-### 8. Compile the target language model
+<hr/>
+
+## 8. Compile the target language model
 Estimated time: **5 seconds**
 
     ~/cdec/klm/lm/build_binary nc.lm nc.klm
 
 This compiles the language model produced by `ngram-count` into an efficient binary format that can shared in memory among multiple processes running on the same system.
 
-</section>
-<section>
-### 9. Create a `cdec.ini` configuration file
+<hr/>
+
+## 9. Create a `cdec.ini` configuration file
 
 Create a `cdec.ini` file with the following contents, making sure to substitute the full path to your language model for `$DEMO_ROOT`.
     formalism=scfg
@@ -160,9 +158,9 @@ Create a `cdec.ini` file with the following contents, making sure to substitute 
 
   - You should be able to run the decoder with the command `~/cdec/decoder/cdec -c cdec.ini`.
 
-</section>
-<section>
-### 10. Create a `weights.init` file
+<hr/>
+
+## 10. Create a `weights.init` file
 
 Create a `weights.init` file (MERT requires that you list the features you want to optimize):
     CountEF 0.1
@@ -185,9 +183,9 @@ You can read more about [feature weights](/concepts/weights.html).
   - Run the decoder directly from the command line with the command `~/cdec/decoder/cdec -c cdec.ini -w weights.init < dev.lc-tok.es-en.sgm` and observe the output.
   - Run the decoder with the `-k N` option to produce *k*-best lists. Do you see duplicates? Add the `-r` option to filter duplicate entries.
 
-</section>
-<section>
-### 11. Tune system using development data with MERT
+<hr/>
+
+## 11. Tune system using development data with MERT
 Estimated time: **20-40 minutes**
 
     ~/cdec/training/dpmert/dpmert.pl -w weights.init -d dev.lc-tok.es-en.sgm -c cdec.ini -j 2
@@ -206,9 +204,9 @@ You can read more about [linear models](/concepts/linear-models.html), [discrimi
  - Repeat the exercises from the previous segment using the `dpmert/weights.final` weights file produced by MERT. How have the translations changed?
  - Use another parameter estimation technique to learn your weights. How do the learned weights vary? How do the translation quality of the dev set and the devtest set vary?
 
-</section>
-<section>
-### 12. Evaluate test set using trained weights
+<hr/>
+
+## 12. Evaluate test set using trained weights
 Estimated time: **5 minutes**
 
     ~/cdec/training/utils/decode-and-evaluate.pl -c cdec.ini -w dpmert/weights.final -i devtest.lc-tok.es-en.sgm -j 2
@@ -225,4 +223,5 @@ This will produce a score report that will look something like the following:
               BLEU=0.276857
                TER=0.535396
     ##############################################################################
+
 
