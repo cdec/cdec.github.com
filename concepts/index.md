@@ -10,6 +10,7 @@ title: cdec - User guide
 - [Linear translation models](linear-models.html)
 - [Feature functions](feature_functions.html)
 - [Feature weights](weights.html)
+- [Lattice translation](lattices.html)
 
 # More information
 
