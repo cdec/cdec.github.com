@@ -34,12 +34,10 @@ Configuring and building the code looks *something* like this (depending on your
 # Optional extensions
 The software in this section is optional. The extensions are configured with command line options to the `./configure` script prior to compilation.
 
-<table border="1">
-<col width="20%">
-<col width="80%">
+<table>
 <tr>
-  <td><b>Parameter</b></td>
-  <td><b>Description</b></td>
+  <th style="width: 20%">Parameter</th>
+  <th style="width: 80%">Description</th>
 </tr>
 <tr>
   <td><code>--with-meteor</code></td>
@@ -63,7 +61,7 @@ If you intend to make changes to the `cdec` code, you will need to clone cdec fr
     git clone git://github.com/redpony/cdec.git
     cd cdec
 
-Prior to building the software for the first time, or when you make certain kinds of changes (such as adding new files), you will need to generate the configuration and make scripts. Doing this requires recent versions of [Autoconf](http://www.gnu.org/software/autoconf/), [Automake](http://www.gnu.org/software/automake/), and [Libtool](libtool).
+Prior to building the software for the first time, or when you make certain kinds of changes (such as adding new files), you will need to generate the configuration and make scripts. Doing this requires recent versions of [Autoconf](http://www.gnu.org/software/autoconf/), [Automake](http://www.gnu.org/software/automake/), and [Libtool](http://www.gnu.org/software/libtool/).
 
     autoreconf -ifv
 

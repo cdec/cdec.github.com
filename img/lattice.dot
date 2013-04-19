@@ -1,0 +1,14 @@
+digraph lattice {
+rankdir = LR;
+edge [fontname=Consolas];
+node [shape=circle];
+0 -> 1 [label="einen"];
+1 -> 3 [label="wettbewerbsbedingten"];
+1 -> 2 [label="wettbewerbs"];
+1 -> 2 [label="wettbewerb"];
+2 -> 3 [label="bedingten"];
+3 -> 5 [label="preissturz"];
+3 -> 4 [label="preis"];
+4 -> 5 [label="sturz"];
+5 [shape=doublecircle]
+}

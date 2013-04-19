@@ -6,7 +6,7 @@ title: cdec
 <h2>Features</h2>
 <p id="intro">cdec is a decoder, aligner, and learning framework for statistical machine translation and similar structured prediction models.</p>
 <ul>
-    <li>Translation and alignment modeling based on finite-state transducers and <a href="/guide/scfgs.html">synchronous context-free grammars</a>.</li>
+    <li>Translation and alignment modeling based on finite-state transducers and <a href="/concepts/scfgs.html">synchronous context-free grammars</a>.</li>
     <li>Implementations of <a href="/documentation/training.html">several parameter learning algorithms</a>.</li>
     <li>Fast, extensible C++ implementation and Python interface (<a href="http://victor.chahuneau.fr/pub/mtm12/">pycdec</a>).</li>
     <li>Modular architecture that separates search space construction, rescoring, and inference.</li>
@@ -20,19 +20,17 @@ title: cdec
   <li>The <a href="/documentation">Documentation</a> contains more information for users already familiar with cdec.</li>
   <li><a href="/concepts">Concepts</a> provides an basic overview of statistical machine translation concepts.</li>
   <li>Developers should have a look at <a href="/developers">this section</a> for documentation about the code.</li>
-</li>
+</ul>
 </section>
 <section>
 <h2>Downloads</h2>
-<table border="1">
-<col width="40%">
-<col width="70%">
+<table>
 <tr>
-  <td><b>Release</b></td>
-  <td><b>Description</b></td>
+    <th>Release</th>
+    <th>Description</th>
 </tr>
 <tr>
-  <td><a href="http://demo.clab.cs.cmu.edu/data/cdec-2013-03-08.tar.gz"><code>cdec-2013-03-08.tar.gz</code></a></td>
+  <td><a href="http://demo.clab.cs.cmu.edu/data/cdec-2013-03-08.tar.gz">cdec-2013-03-08.tar.gz</a></td>
   <td><a href="releases/rel-2013-03-08.html">Release notes for the 2013-03-08 version</a></td>
 </tr>
 </table>
@@ -40,7 +38,7 @@ title: cdec
 </section>
 <section>
 <h2>Citation</h2>
-<p>If you make use of cdec, please cite:<p>
+<p>If you make use of cdec, please cite:</p>
 <p><a href="http://www.cs.cmu.edu/~cdyer">C. Dyer</a>, <a href="http://www.cs.jhu.edu/~alopez/">A. Lopez</a>, <a href="http://cs.jhu.edu/~juri/">J. Ganitkevitch</a>, <a href="http://cs.jhu.edu/~jonny/">J. Weese</a>, <a href="http://www.cs.umd.edu/~fture/Home.html">F. Ture</a>, <a href="http://www.clg.ox.ac.uk/blunsom/">P. Blunsom</a>, H. Setiawan, <a href="http://www.umiacs.umd.edu/~vlad/">V. Eidelman</a>, and <a href="http://www.umiacs.umd.edu/~resnik/">P. Resnik</a>. <a href="http://www.aclweb.org/anthology/P/P10/P10-4002.pdf">cdec: A Decoder, Alignment, and Learning Framework for Finite-State and Context-Free Translation Models.</a> In <i>Proceedings of ACL</i>, July, 2010. <a href="cdec.bibtex.txt">[bibtex]</a>
 <h2>License</h2>
 <p>The cdec source code is released under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>. The <a href="http://www.chokkan.org/software/liblbfgs/">libLBFGS</a> library source code is distributed with cdec, and it is released under the terms of the <a href="http://opensource.org/licenses/mit-license.php">MIT License</a>.</p>
