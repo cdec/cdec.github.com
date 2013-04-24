@@ -11,7 +11,7 @@ Broadly, grammar extraction procedures can be characterized as *offline* or *onl
 
 ## Per-sentence grammars
 
-Since `cdec` does not support an on-disk representation for fast access to grammars that are too large to fit into memory, it is strongly recommended that you use [per-sentence grammars](psgs.html) in translation. PSGs are filtered from larger grammars so as to only contain rules to match a single sentence. Although these must be created for each sentence that is to be translated, they are small enough to be loadable very quickly from the [human-readable grammar format](/documentation/grammar-format.html).
+Since `cdec` does not support an on-disk representation for fast access to grammars that are too large to fit into memory, so it is strongly recommended that you use [per-sentence grammars](psgs.html) in translation. PSGs are filtered from larger grammars so as to only contain rules to match a single sentence. Although these must be created for each sentence that is to be translated, they are small enough to be loadable very quickly from the [human-readable grammar format](/documentation/grammar-format.html).
 
 ## Online grammar extraction
 

@@ -7,6 +7,7 @@ title: cdec - Contributors
 Many people have contributed to the `cdec` project including:
 
   - [Waleed Ammar](http://www.cs.cmu.edu/~wammar/)
+  - [Paul Baltescu](https://www.cs.ox.ac.uk/people/paul.baltescu/)
   - [Victor Chahuneau](http://victor.chahuneau.fr/)
   - [Jon Clark](http://www.cs.cmu.edu/~jhclark/)
   - [Chris Dyer](http://www.cs.cmu.edu/~cdyer/)
