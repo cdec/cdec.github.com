@@ -6,12 +6,6 @@ body {
     color: #555;
 }
 
-.footer {
-  font-size: 75%;
-  color: #888;
-  padding: 1em;
-}
-
 body > * {
     width: 920px;
     padding: 20px;
@@ -87,6 +81,21 @@ article {
     line-height: 1.7em;
 }
 
+footer#logos {
+    text-align:center;
+    padding:0 20px;
+}
+
+footer#license {
+    font-size: 75%;
+    color: #888;
+}
+
+#license img {
+    float:left;
+    margin-right: 0.5em;
+}
+
 #MathJax_Message {
     display: none;
 }
@@ -111,9 +120,4 @@ th {
 th, td {
     border: 1px solid #555;
     padding: 0.5em;
-}
-
-.footer img {
-    float:left;
-    margin-right: 0.5em;
 }
