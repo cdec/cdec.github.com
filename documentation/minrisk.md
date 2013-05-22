@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: cdec - Parameter learnig
+title: cdec - Parameter learning
 ---
 
 ## Further reading

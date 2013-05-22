@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: cdec - Parameter learnig
+title: cdec - Parameter learning
 ---
 
 Och's 2003 **M**inimum **E**rror **R**ate **T**raining (MERT) algorithm is widely used in statistical machine translation to optimize the parameters.

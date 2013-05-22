@@ -98,7 +98,7 @@ Estimated time: **15 minutes**
 
     python -m cdec.sa.extract -c extract.ini -g dev.grammars -j 2 < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
     python -m cdec.sa.extract -c extract.ini -g devtest.grammars -j 2 < devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
-The `-j 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardward capabilities. The extraction process can be slow, so using more processors if they are available is recommended.
+The `-j 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardware capabilities. The extraction process can be slow, so using more processors if they are available is recommended.
 
 You can read more about the [synchronous context-free grammars](/concepts/scfgs.html) that are being extracted in this step.
 
