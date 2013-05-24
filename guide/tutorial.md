@@ -96,11 +96,13 @@ This step compiles the parallel training data (in `training.es-en`) into a data 
 ## 6. Extract grammars for the dev and devtest sets
 Estimated time: **15 minutes**
 
-    python -m cdec.sa.extract -c extract.ini -g dev.grammars -j 2 < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
-    python -m cdec.sa.extract -c extract.ini -g devtest.grammars -j 2 < devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
+    python -m cdec.sa.extract -c extract.ini -g dev.grammars -j 2 -z < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
+    python -m cdec.sa.extract -c extract.ini -g devtest.grammars -j 2 -z < devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
 The `-j 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardware capabilities. The extraction process can be slow, so using more processors if they are available is recommended.
 
-You can read more about the [synchronous context-free grammars](/concepts/scfgs.html) that are being extracted in this step.
+The `-z` option tells the extractor to use gzip to compress the grammars. This is strongly recommended since the cdec grammar can read gzipped files. 
+
+You can read more about [grammar extraction](grammar_extraction.html) and the [synchronous context-free grammars](/concepts/scfgs.html) that are being extracted in this step.
 
 The grammars extracted in this section are written to the `dev.grammars` and `devtest.grammars` directory; there is one grammar for each sentence in the dev and devtest sets, containing all rules that could potentially apply to that sentence. The following shows 5 rules extracted for the first sentence of the dev set (*la casa blanca ya ha anunciado que , al recibir el premio , hablará de la guerra afgana .*).
 
@@ -176,7 +178,7 @@ Create a `weights.init` file (MERT requires that you list the features you want 
     SampleCountF -0.1
     WordPenalty -0.1
 
-You can read more about [feature weights](/concepts/weights.html).
+You can read more about [feature functions](/concepts/feature_functions.html) and [feature weights](/concepts/weights.html).
 
 **Exercises:**
 
