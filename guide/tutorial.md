@@ -121,7 +121,7 @@ You can read more about [the cdec grammar format](/documentation/grammar-format.
 
  - If you use denser alignments (e.g., those produced by the `union` symmetrization heuristic) or sparser alignments (e.g., those produced by `intersect`), how do the number and quality of rules change?
  - How would you add a *phrase count feature*, which adds a count of the rules used in the derivation to the model?
- - Come up with a feature or features whose value can be computed using information just found in the grammar rules (i.e., the source and target RHS yields). Write code to implement it and add it to the grammars. You will need to add a weight for each feature you add to your weights file (discussed below) and then rerun MERT.
+ - Come up with a feature or features whose value can be computed using information just found in the grammar rules (i.e., the source and target RHS yields). Write code to implement it and add it to the grammars. You will need to add a weight for each feature you add to your weights file (discussed below) and then rerun MIRA.
 
 <hr/>
 
@@ -166,7 +166,7 @@ Estimated time: **20-40 minutes**
 
     ~/cdec/training/mira/mira.py -d dev.lc-tok.es-en.sgm -t devtest.lc-tok.es-en.sgm -c cdec.ini -j 2
 
-The `-j 2` option tells MERT to use 2 processors for decoding and optimization. This can be adjusted based on your hardware capabilities.
+The `-j 2` option tells MIRA to use 2 processors for decoding and optimization. This can be adjusted based on your hardware capabilities.
 
 You can read more about [linear models](/concepts/linear-models.html), [discriminative training](/concepts/training.html).
 
