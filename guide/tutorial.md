@@ -152,7 +152,6 @@ This compiles the language model produced by `ngram-count` into an efficient bin
 Create a `cdec.ini` file with the following contents, making sure to substitute the full path to your language model for `$DEMO_ROOT`.
     formalism=scfg
     add_pass_through_rules=true
-    density_prune=80
     feature_function=WordPenalty
     feature_function=KLanguageModel $DEMO_ROOT/nc.klm
 
@@ -162,59 +161,16 @@ Create a `cdec.ini` file with the following contents, making sure to substitute 
 
 <hr/>
 
-## 10. Create a `weights.init` file
-
-Create a `weights.init` file (MERT requires that you list the features you want to optimize):
-    CountEF 0.1
-    EgivenFCoherent -0.1
-    Glue 0.01
-    IsSingletonF -0.01
-    IsSingletonFE -0.01
-    LanguageModel 0.1
-    LanguageModel_OOV -1
-    MaxLexFgivenE -0.1
-    MaxLexEgivenF -0.1
-    PassThrough -0.1
-    SampleCountF -0.1
-    WordPenalty -0.1
-
-You can read more about [feature functions](/concepts/feature_functions.html) and [feature weights](/concepts/weights.html).
-
-**Exercises:**
-
-  - Run the decoder directly from the command line with the command `~/cdec/decoder/cdec -c cdec.ini -w weights.init < dev.lc-tok.es-en.sgm` and observe the output.
-  - Run the decoder with the `-k N` option to produce *k*-best lists. Do you see duplicates? Add the `-r` option to filter duplicate entries.
-
-<hr/>
-
-## 11. Tune system using development data with MERT
+## 10. Tune the system parameters using development data with MIRA
 Estimated time: **20-40 minutes**
 
-    ~/cdec/training/dpmert/dpmert.pl -w weights.init -d dev.lc-tok.es-en.sgm -c cdec.ini -j 2
+    ~/cdec/training/mira/mira.py -d dev.lc-tok.es-en.sgm -t devtest.lc-tok.es-en.sgm -c cdec.ini -j 2
 
 The `-j 2` option tells MERT to use 2 processors for decoding and optimization. This can be adjusted based on your hardware capabilities.
 
-You can read more about [linear models](/concepts/linear-models.html), [discriminative training](/concepts/training.html), and the [minimum error rate training algorithm](/documentation/mert.html).
+You can read more about [linear models](/concepts/linear-models.html), [discriminative training](/concepts/training.html).
 
-**Troubleshooting:**
-
- - check the `dpmert/logs.1/decoder.sentserver.log.1` file for errors
- - check the `dpmert/logs.1/cdec.1.ER` file for errors
-
-**Exercises:**
-
- - Repeat the exercises from the previous segment using the `dpmert/weights.final` weights file produced by MERT. How have the translations changed?
- - Use another parameter estimation technique to learn your weights. How do the learned weights vary? How do the translation quality of the dev set and the devtest set vary?
-
-<hr/>
-
-## 12. Evaluate test set using trained weights
-Estimated time: **5 minutes**
-
-    ~/cdec/training/utils/decode-and-evaluate.pl -c cdec.ini -w dpmert/weights.final -i devtest.lc-tok.es-en.sgm -j 2
-
-
-This will produce a score report that will look something like the following:
+When training completes, the MIRA script will decode the test set in `devtest.lc-tok.es-en.sgm` and give you a score report that looks something like the following:
 
     ### SCORE REPORT #############################################################
             OUTPUT=eval.devtest.lc-tok.es-en.20130020-020502/test.trans
@@ -225,5 +181,9 @@ This will produce a score report that will look something like the following:
               BLEU=0.276857
                TER=0.535396
     ##############################################################################
+
+**Exercises:**
+
+  - Look at the feature weights learned by MIRA.
 
 
