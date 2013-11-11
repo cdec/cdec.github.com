@@ -16,7 +16,7 @@ Configuring and building the code looks *something* like this (depending on your
     make
     ./tests/run-system-tests.pl
 
-# Building the Python extentions
+# Building the Python extensions
 
     cd python
     python setup.py build
