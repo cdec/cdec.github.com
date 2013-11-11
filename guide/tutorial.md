@@ -16,6 +16,7 @@ This tutorial will guide you through the process of creating a Spanish-English s
 
  - [Download and compile `cdec`](compiling.html)
    - Make sure you build the `pycdec` Python language extensions to `cdec`
+   - This tutorial assumes you have either installed them into your system's default location or that you have installed them into an isolated Python environment, e.g., using [virtualenv](https://pypi.python.org/pypi/virtualenv).
  - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) for this demo (16.7 MB)
 
 <hr/>
@@ -83,9 +84,6 @@ Estimated time: **5 seconds**
 ## 5. Compile the training data
 Estimated time: **~1 minute**
 
-*This step assumes your shell is `bash`*.
-
-    export PYTHONPATH=`echo ~/cdec/python/build/lib.*`
     python -m cdec.sa.compile -b training.es-en -a training.gdfa -c extract.ini -o training.sa
 
 This step compiles the parallel training data (in `training.es-en`) into a data structure called a [suffix array](http://en.wikipedia.org/wiki/Suffix_array) that enables very fast lookup of string matches. By representing the training data as a suffix array, it is possible to do a targeted extraction of rules for any input sentence, rather than extracting all rules licensed by the training data.
