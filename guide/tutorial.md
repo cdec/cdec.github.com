@@ -22,6 +22,7 @@ This tutorial will guide you through the process of creating a Spanish-English s
 
 ## 1. Tokenize and lowercase the training, dev, and devtest data
 Estimated time: **~2 minutes**
+
     ~/cdec/corpus/tokenize-anything.sh < training/news-commentary-v7.es-en | ~/cdec/corpus/lowercase.pl > nc.lc-tok.es-en
     ~/cdec/corpus/tokenize-anything.sh < dev/2010.es-en | ~/cdec/corpus/lowercase.pl > dev.lc-tok.es-en
     ~/cdec/corpus/tokenize-anything.sh < devtest/2011.es-en | ~/cdec/corpus/lowercase.pl > devtest.lc-tok.es-en
@@ -51,6 +52,7 @@ This step filters out sentence pairs that have over 80 words (in either language
 
 ## 3. Run word bidirectional word alignments
 Estimated time: **~10 minutes**
+
     ~/cdec/word-aligner/fast_align -i training.es-en -d -v -o > training.es-en.fwd_align
     ~/cdec/word-aligner/fast_align -i training.es-en -d -v -o -r > training.es-en.rev_align
 
@@ -67,6 +69,7 @@ You can read more about [word alignment](/concepts/alignment.html) and the [`fas
 
 ## 4. Symmetrize word alignments
 Estimated time: **5 seconds**
+
     ~/cdec/utils/atools -i training.es-en.fwd_align -j training.es-en.rev_align -c grow-diag-final-and > training.gdfa
     
 
@@ -98,6 +101,7 @@ Estimated time: **15 minutes**
 
     python -m cdec.sa.extract -c extract.ini -g dev.grammars -j 2 -z < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
     python -m cdec.sa.extract -c extract.ini -g devtest.grammars -j 2 -z < devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
+
 The `-j 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardware capabilities. The extraction process can be slow, so using more processors if they are available is recommended.
 
 The `-z` option tells the extractor to use gzip to compress the grammars. This is strongly recommended since the cdec grammar can read gzipped files. 
@@ -150,6 +154,7 @@ This compiles the language model produced by `ngram-count` into an efficient bin
 ## 9. Create a `cdec.ini` configuration file
 
 Create a `cdec.ini` file with the following contents, making sure to substitute the full path to your language model for `$DEMO_ROOT`.
+
     formalism=scfg
     add_pass_through_rules=true
     feature_function=WordPenalty
