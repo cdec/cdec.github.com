@@ -130,7 +130,7 @@ You can read more about [the cdec grammar format](/documentation/grammar-format.
 ## 7. Build the target language model
 Estimated time: **1 minute**
 
-    ~/cdec/corpus/cut-corpus.pl 2 training.es-en | ~/cdec/klm/lm/builder/builder --order 3 > nc.lm
+    ~/cdec/corpus/cut-corpus.pl 2 training.es-en | ~/cdec/klm/lm/builder/lmplz --order 3 > nc.lm
 
 You can read more about [language models](/concepts/language-models.html).
 
