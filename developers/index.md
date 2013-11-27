@@ -4,7 +4,7 @@ title: cdec - Developers
 ---
 # Developer documentation
 
-cdec is [developed on Github](http://github.com/redpony/cdec) by [many volunteers](contributors.html) users are encouraged to fork us, develop the project further, and submit patches to the main project.
+cdec is [developed on Github](http://github.com/redpony/cdec) by [many volunteers](contributors.html) users are encouraged to fork us, develop the project further, and submit patches to the main project (general instructions on how to do so can be found [here](http://git-scm.com/book/ch5-2.html#Public-Small-Project)).
 
 ## Development guidelines
 * Ensure that the system tests continue to function
