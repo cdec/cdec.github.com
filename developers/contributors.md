@@ -8,11 +8,12 @@ Many people have contributed to the `cdec` project including:
 
   - [Waleed Ammar](http://www.cs.cmu.edu/~wammar/)
   - [Paul Baltescu](https://www.cs.ox.ac.uk/people/paul.baltescu/)
+  - [Phil Blunsom](http://www.cs.ox.ac.uk/people/phil.blunsom/)
   - [Victor Chahuneau](http://victor.chahuneau.fr/)
   - [Jon Clark](http://www.cs.cmu.edu/~jhclark/)
   - [Chris Dyer](http://www.cs.cmu.edu/~cdyer/)
   - [Vlad Eidelman](http://www.umiacs.umd.edu/~vlad/)
-  - Jeffrey Flanigan
+  - [Jeffrey Flanigan](http://www.cs.cmu.edu/~jmflanig/)
   - [Juri Ganitkevitch](http://cs.jhu.edu/~juri/)
   - [Andrea Gesmundo](http://cui.unige.ch/~gesmundo/)
   - [Jonathan Graehl](http://www.isi.edu/~graehl)
