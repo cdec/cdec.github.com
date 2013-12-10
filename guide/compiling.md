@@ -7,13 +7,14 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
 # Download the source code
 You have two options for retrieving the code. The first (and simplest) option is to use a prepackaged source archive:
 
-    wget http://demo.clab.cs.cmu.edu/cdec/cdec-2013-07-13.tar.gz
+    wget http://demo.clab.cs.cmu.edu/cdec/cdec-2013-11-10.tar.gz
 
 # Configuring and compiling
 Configuring and building the code looks *something* like this (depending on your system configuration and requirements, you may need to specify more options to `./configure`):
 
     ./configure [--with-boost=/path/to/boost-install]
     make
+    make check
     ./tests/run-system-tests.pl
 
 # Building the Python extensions
@@ -41,7 +42,7 @@ The software in this section is optional. The extensions are configured with com
 </tr>
 <tr>
   <td><code>--with-meteor</code></td>
-  <td>Makes <a href="http://www.cs.cmu.edu/~alavie/METEOR/">METEOR</a> available for tuning and evaluation. You must specify the full path to the METEOR jar, and Java must be available in your path.</td>
+  <td>Makes <a href="http://www.cs.cmu.edu/~alavie/METEOR/">METEOR</a> available for tuning and evaluation. You must specify the full path to the METEOR jar, and `java` must be available in your path.</td>
 </tr>
 <tr>
   <td><code>--with-cmph</code></td>

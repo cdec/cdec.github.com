@@ -15,8 +15,8 @@ This tutorial will guide you through the process of creating a Spanish-English s
 ## 0. Prerequisites
 
  - [Download and compile `cdec`](compiling.html)
-   - Make sure you build the `pycdec` Python language extensions to `cdec`
-   - This tutorial assumes you have either installed them into your system's default location or that you have installed them into an isolated Python environment, e.g., using [virtualenv](https://pypi.python.org/pypi/virtualenv).
+   - Make sure you build and install the `pycdec` Python language extensions to `cdec`
+   - This tutorial assumes you have either installed the `pycdec` extensions into your system's default location or that you have installed them into an isolated Python environment, e.g., using [virtualenv](https://pypi.python.org/pypi/virtualenv).
  - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) for this demo (16.7 MB)
 
 <hr/>
