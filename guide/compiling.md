@@ -25,7 +25,7 @@ Configuring and building the code looks *something* like this (depending on your
 # Third-party software dependencies
 **You must have all the software in this section installed somewhere on your system!**
 
-- A relatively recent version of a C++ compiler, for example [gcc](http://gcc.gnu.org/).
+- A relatively recent version of a C++ compiler, for example [gcc](http://gcc.gnu.org/) or [Clang](http://clang.llvm.org/).
 - [Boost C++ libraries (version 1.44 or later)](http://www.boost.org/).
     - If you build your own boost, you _must install it_ using `bjam install`.
     - Older versions of Boost may work, but problems have been reported on some platforms with older versions.
