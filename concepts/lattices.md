@@ -32,7 +32,7 @@ Lattices are encoded by ordering the nodes in a topological ordering and using t
      )
     )
 
-For each edge, the first field is a string representing the edge label, followed by a cost and the distance between the start and the end node of the edge. This format is informally called the "Python lattice format" (PLF).
+For each edge, the first field is a string representing the edge label, followed by a cost and the distance between the start and the end node of the edge. The string `'*EPS*'` indicates an espilon edge. This format is informally called the "Python lattice format" (PLF).
 
 ## Lattice translation
 
