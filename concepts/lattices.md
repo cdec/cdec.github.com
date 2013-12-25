@@ -32,12 +32,12 @@ Lattices are encoded by ordering the nodes in a topological ordering and using t
      )
     )
 
-For each edge, the first field is a string representing the edge label, followed by a cost and the distance between the start and the end node of the edge. This format is informally called the "Python lattice format" (PLF).
+For each edge, the first field is a string representing the edge label, followed by a cost and the distance between the start and the end node of the edge. The string `'*EPS*'` indicates an espilon edge. This format is informally called the "Python lattice format" (PLF).
 
 ## Lattice translation
 
-cdec accepts PLF lattices written on a single line as input. The edge cost value is associated with a feature weigth named `LatticeCost`.
+cdec accepts PLF lattices written on a single line as input. The edge cost value is associated with a feature weight named `LatticeCost`.
 
 For more details on lattice translation, refer to:
 
-Chris Dyer, Smaranda Muresan, and Philip Resnik. [Generalizing Word Lattice Translation](http://aclweb.org/anthology-new/P/P08/P08-1115.pdf). In Proceedings of ACL 2008.
+Chris Dyer, Smaranda Muresan, and Philip Resnik. [Generalizing Word Lattice Translation](http://aclweb.org/anthology-new/P/P08/P08-1115.pdf). In _Proceedings of ACL 2008_.
