@@ -25,9 +25,11 @@ Multiple references for each sentence can be represented in a single text file b
 # Evaluating translation output
 
 By default, BLEU is used for evaluation:
+
     ./mteval/fast_score -r references.txt -i hypothesis.txt
 
-Here is another option:    
+Here is another option:
+
     ./mteval/fast_score -r references.txt -i hypothesis.txt -m ter
 
 # Adding evaluation functions
