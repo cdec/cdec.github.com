@@ -11,7 +11,7 @@ Evaluating the quality of a computer-generated translation relative to a human-g
  - [BLEU](http://acl.ldc.upenn.edu/P/P02/P02-1040.pdf) (native implementation)
  - [TER](http://mt-archive.info/AMTA-2006-Snover.pdf) (native implementation)
  - [METEOR](http://www.cs.cmu.edu/~alavie/METEOR/pdf/meteor-wmt11.pdf) (requires [supplementary software](http://www.cs.cmu.edu/~alavie/METEOR/))
- - CER (character edit rate; native implemtation)
+ - CER (character edit rate; native implementation)
  - Linear combinations of the above
 
 # Reference format
