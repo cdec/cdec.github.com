@@ -7,13 +7,13 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
 # Download the source code
 You have two options for retrieving the code. The first (and simplest) option is to use a prepackaged source archive:
 
-    wget http://demo.clab.cs.cmu.edu/cdec/cdec-2013-11-10.tar.gz
+    wget http://demo.clab.cs.cmu.edu/cdec/cdec-2014-01-20.tar.gz
 
 # Configuring and compiling
 Configuring and building the code looks *something* like this (depending on your system configuration and requirements, you may need to specify more options to `./configure`):
 
     ./configure [--with-boost=/path/to/boost-install]
-    make
+    make -j 4
     make check
     ./tests/run-system-tests.pl
 
@@ -25,7 +25,7 @@ Configuring and building the code looks *something* like this (depending on your
 # Third-party software dependencies
 **You must have all the software in this section installed somewhere on your system!**
 
-- A relatively recent version of a C++ compiler, for example [gcc](http://gcc.gnu.org/) or [Clang](http://clang.llvm.org/).
+- A C++ compiler **that supports the [C++11 standard](http://www.stroustrup.com/C++11FAQ.html)**, for example [gcc](http://gcc.gnu.org/) or [Clang](http://clang.llvm.org/).
 - [Boost C++ libraries (version 1.44 or later)](http://www.boost.org/).
     - If you build your own boost, you _must install it_ using `bjam install`.
     - Older versions of Boost may work, but problems have been reported on some platforms with older versions.
