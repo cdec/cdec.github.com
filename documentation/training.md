@@ -5,6 +5,11 @@ title: cdec - Parameter learning
 
 `cdec` includes implementations of the following discriminative parameter learning algorithms. Except for conditional likelihood training, other algorithms make use of an [evaluation function](/guide/evaluation.html).
 
+* __[MIRA (Chiang et al., 2008)](mira.html)__
+    * Target any sentence-decomposible automatic translation metric, including approximations of BLEU
+    * Parallelization enabled by weight averaging at each epoch
+    * Relatively large numbers of features can be effectively trained
+    * **Recommended for most users**
 * __[Dynamic Programming MERT (Kumar et al., 2009)](mert.html)__
     * Optimal for small numbers of features
     * Target any automatic translation metric
@@ -31,10 +36,6 @@ title: cdec - Parameter learning
     * Target any sentence-decomposible automatic translation metric
     * L1, L2, and entropy regularization
     * Distributed decoding for batch weight updates
-* __[MIRA (Chiang et al., 2008)](mira.html)__
-    * Target any sentence-decomposible automatic translation metric
-    * Single core, online algorithm only
-    * No support for regularization
 
 ## Development ideas
 * Although these algorithms are similar in structure and function, each uses a separate driver program. Since these independent driver programs have a fair amount of duplicated logic (e.g., for managing decoding workflow and the distribution of weights across iterations), a single driver program could conceivably be used for all or many of them.
