@@ -4,11 +4,13 @@ title: Building cdec from source
 ---
 This page gives a basic summary of how to acquire and build the `cdec` source code.  Before starting, you should be familiar with building and installing software on Unix-like platforms.
 
+<hr/>
 # Download the source code
 You have two options for retrieving the code. The first (and simplest) option is to use a prepackaged source archive:
 
-    wget http://demo.clab.cs.cmu.edu/cdec/cdec-2014-01-20.tar.gz
+    wget http://demo.clab.cs.cmu.edu/cdec/cdec-2014-01-28.tar.gz
 
+<hr/>
 # Configuring and compiling
 Configuring and building the code looks *something* like this (depending on your system configuration and requirements, you may need to specify more options to `./configure`):
 
@@ -17,11 +19,13 @@ Configuring and building the code looks *something* like this (depending on your
     make check
     ./tests/run-system-tests.pl
 
+<hr/>
 # Building the Python extensions
 
     cd python
     python setup.py build
 
+<hr/>
 # Third-party software dependencies
 **You must have all the software in this section installed somewhere on your system!**
 
@@ -32,6 +36,7 @@ Configuring and building the code looks *something* like this (depending on your
 - [GNU Flex](http://flex.sourceforge.net/)
 - [Python-2.7](http://docs.python.org/) is required to build the `pycdec` extensions
 
+<hr/>
 # Optional extensions
 The software in this section is optional. The extensions are configured with command line options to the `./configure` script prior to compilation.
 
@@ -55,6 +60,7 @@ The software in this section is optional. The extensions are configured with com
 </table>
 <br />
 
+<hr/>
 # Getting `cdec` from GitHub
 
 If you intend to make changes to the `cdec` code, you will need to clone cdec from the central git repository, [which is hosted at github.](http://github.com/redpony/cdec) Checking out the code is simple enough:
@@ -66,6 +72,7 @@ Prior to building the software for the first time, or when you make certain kind
 
     autoreconf -ifv
 
+<hr/>
 # Supported Platforms
 
 - Linux and Mac OS X are supported
