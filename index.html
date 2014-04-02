@@ -6,7 +6,12 @@ title: cdec
 <h2>What is cdec?</h2>
 <p id="intro">cdec is a decoder, aligner, and learning framework for statistical machine translation and similar structured prediction models developed by <a href="http://www.cs.cmu.edu/~cdyer/">Chris Dyer</a> at CMU, <a href="http://www.cs.cmu.edu/~cdyer/students.html">his students</a>, and <a href="http://www.cdec-decoder.org/developers/contributors.html">lots of volunteers</a>. It supports:</p>
 <ul>
-    <li>Translation and alignment modeling based on <a href="/concepts/fsts.html">finite-state transducers</a> and <a href="/concepts/scfgs.html">synchronous context-free grammars</a>.</li>
+    <li>Translation and alignment modeling based on
+    <ul>
+       <li><a href="/concepts/fsts.html">Finite-state transducers</a></li>
+       <li><a href="/concepts/scfgs.html">Synchronous context-free grammars</a>
+       <li><a href="/concepts/xrlns.html">extended tree-to-string transducers (<b>xRs</b>)</a></li>
+    </ul>
     <li>Implementations of <a href="/documentation/training.html">many parameter learning algorithms</a>.</li>
     <li>A fast, extensible C++ implementation and flexible Python interface (<a href="http://victor.chahuneau.fr/pub/mtm12/">pycdec</a>).</li>
     <li>Modular architecture that separates search space construction, rescoring, and inference.</li>
