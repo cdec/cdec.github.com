@@ -6,7 +6,7 @@ title: Extended tree-to-string transducers
 
 An example tree-to-string grammar, expressed in the cdec rule format is the following:
 
-    (S [NP-C] [VP] (PUNC .)) ||| [1] [2] . ||| Rule1=1
+    (S [NP-C] [VP] (PUNC .)) ||| [1] [2] . ||| Rule1=1 SomeOtherFeature=-2.37
     (NP-C (DT the) (NN gunman)) ||| qiangshou ||| Rule2=1
     (VP (VBD was) (VP-C [VBN] (PP (IN by) [NP-C]))) ||| bei [2] [1] ||| Rule3=1
     (NP-C (DT the) (NN police)) ||| jingfang ||| Rule4=1
