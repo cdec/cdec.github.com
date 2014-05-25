@@ -22,10 +22,16 @@ into the output sentence
 
     qiangshou bei jingfang jibi .
 
+## Configuring `cdec`
+
 The tree-to-string formalism can be configured to be used by including the following line in your `cdec.ini` file:
 
     formalism=t2s
     grammar=/path/to/rule-table.txt
 
 All rescoring, inference, and parameter learning algorithms are supported.
+
+## Extracting tree to string rules
+
+Tree to string transduction rules can be extracted using the [HyperGrex tool](https://github.com/armatthews/HyperGrex), developed by [Austin Matthews](http://armatthews.com/).
 
