@@ -9,18 +9,18 @@ The tree transducers that are supported permit tree fragments of arbitrary depth
 An example tree-to-string rule table, expressed in the cdec rule format is the following:
 
     (S [NP-C] [VP] (PUNC .)) ||| [1] [2] . ||| Rule1=1 SomeOtherFeature=-2.37
-    (NP-C (DT the) (NN gunman)) ||| qiangshou ||| Rule2=1
-    (VP (VBD was) (VP-C [VBN] (PP (IN by) [NP-C]))) ||| bei [2] [1] ||| Rule3=1
-    (NP-C (DT the) (NN police)) ||| jingfang ||| Rule4=1
-    (VBN killed) ||| jibi ||| Rule5=1
+    (NP-C (DT the) (NN gunman)) ||| qiāngshǒu ||| Rule2=1
+    (VP (VBD was) (VP-C [VBN] (PP (IN by) [NP-C]))) ||| bèi [2] [1] ||| Rule3=1
+    (NP-C (DT the) (NN police)) ||| jǐngfāng ||| Rule4=1
+    (VBN killed) ||| jībì ||| Rule5=1
 
 This set of rules will transduce the English input tree
 
     (S (NP-C (DT the) (NN gunman)) (VP (VBD was) (VP-C (VBN killed) (PP (IN by) (NP-C (DT the) (NN police))))) (PUNC .))
 
-into the output sentence
+into the Chinese output sentence
 
-    qiangshou bei jingfang jibi .
+    qiāngshǒu bèi jǐngfāng jībì .
 
 ## Configuring `cdec`
 
