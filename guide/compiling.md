@@ -20,10 +20,13 @@ Configuring and building the code looks *something* like this (depending on your
     ./tests/run-system-tests.pl
 
 <hr/>
-# Building the Python extensions
+# Building and installing Python extensions
 
     cd python
     python setup.py build
+    python setup.py install
+
+Note: the Python extensions must be installed somewhere Python will look for them by default. If you do not have access to Python's default library directory or do not wish to install cdec there, we recommend using [virtualenv](http://virtualenv.readthedocs.org)
 
 <hr/>
 # Third-party software dependencies
