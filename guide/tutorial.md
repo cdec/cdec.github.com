@@ -29,7 +29,7 @@ Estimated time: **~2 minutes**
     ~/cdec/corpus/tokenize-anything.sh < devtest/2011.es-en | ~/cdec/corpus/lowercase.pl > devtest.lc-tok.es-en
     
 
-Read more about the [data format](/documentation/corpus-format.html) used for parallel corpora.
+Read more about the [data format](/guide/corpus.html) used for parallel corpora.
 
 **Exercises:**
 
@@ -117,7 +117,7 @@ The grammars extracted in this section are written to the `dev.grammars` and `de
     [X] ||| de la [X,1] afgana . ||| of the afghan [X,1] . ||| EgivenFCoherent=0.301030009985 SampleCountF=0.477121263742 CountEF=0.301030009985 MaxLexFgivenE=1.31197583675 MaxLexEgivenF=0.796108067036 IsSingletonF=0.0 IsSingletonFE=1.0 ||| 0-0 1-1 3-2 4-4
     
 
-You can read more about [the cdec grammar format](/documentation/grammar-format.html) to understand the contents of these files.
+You can read more about [the cdec grammar format](/guide/grammar-format.html) to understand the contents of these files.
 
 **Exercises:**
 

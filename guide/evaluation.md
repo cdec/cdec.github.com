@@ -2,7 +2,7 @@
 layout: documentation
 title: Evaluation
 ---
-Evaluating the quality of a computer-generated translation relative to a human-generated reference translation or set of human-generated reference translations is useful for [automatic parameter tuning](/documentation/training.html), to compare the quality of two machine translation systems, and to carry out minimum Bayes risk decoding. The documentation on this page describes how `cdec` tools deal with evaluation and reference translations.
+Evaluating the quality of a computer-generated translation relative to a human-generated reference translation or set of human-generated reference translations is useful for [automatic parameter tuning](training.html), to compare the quality of two machine translation systems, and to carry out minimum Bayes risk decoding. The documentation on this page describes how `cdec` tools deal with evaluation and reference translations.
 
 # Evaluation functions
 

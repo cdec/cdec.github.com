@@ -8,7 +8,7 @@ This page gives a basic summary of how to acquire and build the `cdec` source co
 # Download the source code
 You have two options for retrieving the code. The first (and simplest) option is to use a prepackaged source archive:
 
-    wget http://demo.clab.cs.cmu.edu/cdec/cdec-2014-01-28.tar.gz
+    wget http://demo.clab.cs.cmu.edu/cdec/cdec-{{site.current_version}}.tar.gz
 
 <hr/>
 # Configuring and compiling

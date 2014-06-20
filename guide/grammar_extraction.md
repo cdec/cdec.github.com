@@ -1,19 +1,16 @@
 ---
 layout: documentation
-title: Grammar extraction
+title: SCFG Grammar extraction
 ---
-Grammar extraction (also called grammar induction, grammar learning, and phrase table extraction), is the process of building a [translation grammar](/concepts/scfgs.html), usually from a [word-aligned](/concepts/alignment.html) parallel corpus.
+SCFG grammar extraction (also called grammar induction, grammar learning, rule learning, and phrase table extraction), is the process of building a [SCFG translation grammar](/concepts/scfgs.html), usually from a [word-aligned](/concepts/alignment.html) parallel corpus. Note: there are many types of translation models with different formal characteristics; these instructions describe how to extract a "Hiero" grammar (an SCFG with a single nonterminal category).
 
-Broadly, grammar extraction procedures can be characterized as *offline* or *online* (this glosses over some details, but the distinction is worth understanding). `cdec` includes an online grammar extractor originally developed by [Adam Lopez](http://www.cs.jhu.edu/~alopez/).
+The `cdec` distribution includes an online grammar extractor originally developed by [Adam Lopez](http://www.cs.jhu.edu/~alopez/) that is based on [suffix arrays](http://en.wikipedia.org/wiki/Suffix_array) for rapidly looking up patterns in a parallel corpus.
 
- * *Offline grammar extraction* is the practice of creating a single, very large grammar from the training data that consists of all possible rules licensed by the parallel corpus.
- * *Online grammar extraction* is the practice of creating a grammar for a single sentence or document on demand; these grammars may be substantially smaller since they do not need to contain translations for words that do not occur in the input. Online grammar extraction usually requires representing the parallel corpus in a form that can be searched rapidly, such as a [suffix array](http://en.wikipedia.org/wiki/Suffix_array).
+## Per-sentence translation grammars
 
-## Per-sentence grammars
+Since `cdec` does not support an on-disk representation for fast access to grammars that are too large to fit into memory, it is strongly recommended that you use [per-sentence grammars](psgs.html) in translation. PSGs are filtered from larger grammars so as to only contain rules to match a single sentence. Although these must be created for each sentence that is to be translated, they are small enough to be loadable very quickly from the [human-readable grammar format](grammar-format.html).
 
-Since `cdec` does not support an on-disk representation for fast access to grammars that are too large to fit into memory, it is strongly recommended that you use [per-sentence grammars](psgs.html) in translation. PSGs are filtered from larger grammars so as to only contain rules to match a single sentence. Although these must be created for each sentence that is to be translated, they are small enough to be loadable very quickly from the [human-readable grammar format](/documentation/grammar-format.html).
-
-## Online grammar extraction
+## Online translation grammar extraction
 
 Per-sentence grammars can be created directly using the tools in the `cdec.sa` Python package.
 

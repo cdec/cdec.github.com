@@ -9,5 +9,5 @@ Per-sentence grammars are [synchronous context-free grammars](/concepts/scfgs.ht
     <seg grammar="/home/cdec/grammar.125.scfg.gz"> Hier ist ein Satz . </seg>
     <seg grammar="/home/cdec/grammar.126.scfg.gz"> Ein anderer Satz ! </seg>
 
-Per-sentence grammars must be in the [standard cdec grammar format](/documentation/grammar-format.html) and may optionally be compressed using `gzip`.
+Per-sentence grammars must be in the [standard cdec grammar format](grammar-format.html) and may optionally be compressed using `gzip`.
 
