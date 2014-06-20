@@ -50,7 +50,7 @@ The software in this section is optional. The extensions are configured with com
 </tr>
 <tr>
   <td><code>--with-meteor</code></td>
-  <td>Makes <a href="http://www.cs.cmu.edu/~alavie/METEOR/">METEOR</a> available for tuning and evaluation. You must specify the full path to the METEOR jar, and `java` must be available in your path.</td>
+  <td>Makes <a href="http://www.cs.cmu.edu/~alavie/METEOR/">METEOR</a> available for tuning and evaluation. You must specify the full path to the METEOR jar, and <code>java</code> must be available in your path.</td>
 </tr>
 <tr>
   <td><code>--with-cmph</code></td>
