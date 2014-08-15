@@ -3,7 +3,7 @@ layout: documentation
 title: cdec system building tutorial
 ---
 
-This tutorial will guide you through the process of creating a Spanish-English statistical machine translation system with `cdec`. To complete this tutorial successfully, you will need:
+This tutorial will guide you through the process of creating a Spanish-English [hierarchical phrase-based translation system](/concepts/hiero.html) with `cdec`. To complete this tutorial successfully, you will need:
 
  - About 1 hour of time
  - A Linux or MacOS X system with at least 2GB RAM
