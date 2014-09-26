@@ -7,11 +7,11 @@ Translation formalisms are the set of computational primitives that constrain ho
 <hr />
 ## Supported formalism keywords
 
-* `scfg`
-* `tagger`
-* `t2s`
-* `rescore`
-* `fst`
+* `scfg` - this formalism translates sentences or lattices using a synchronous context-free grammar (SCFG).
+* `tagger` - this formalism labels a sentence from a finite set of tags, where every tag is available to tag every word.
+* `t2s` - this formalism transduces a context free tree into a string using [tree-to-string transducers](xrs.html).
+* `rescore` - this formalism is used for rescoring a hypergraph of alternative strings.
+* `fst` - this formalism translates a set of strings encoded as a context-free grammar (CFG) using a weighted finite state transducer.
 
 ## Experimental or internal formalism keywords
 
