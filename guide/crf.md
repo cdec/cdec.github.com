@@ -7,7 +7,12 @@ A conditional random field (CRF) is a log-[linear model](../concepts/linear-mode
 
 In `cdec` every output is produced by some latent [derivation](../concepts/derivations.html). Moreover, any output <span>\\( \boldsymbol{y} \\)</span> will in general be derivable via many different *latent* derivations <span>\\( \boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) \\)</span> (note: the exact number of derivations depends on the ambiguity of the translation space entailed by the translation grammar and [translation formalism](../concepts/formalism.html); it is possible to construct grammars for some problems, like sequence labeling, that produce *unambiguous* derivations of every output).
 
-Because an output in `cdec` is associated with potentially many derivations, the probability of some output <span>\\( \boldsymbol{y} \\)</span> is defined to be the *marginal* probability, over all derivations that produce that output, <span>\\( p(\boldsymbol{y} \mid x) = \sum_{\boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) } p(\boldsymbol{z} \mid x) \\)</span>.
+Because outputs in `cdec` may be associated with many derivations, the probability of some output <span>\\( \boldsymbol{y} \\)</span> is defined to be the *marginal* probability, over all derivations that produce that output, <span>\\( p(\boldsymbol{y} \mid x) = \sum_{\boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) } p(\boldsymbol{z} \mid x) \\)</span>. Note that in the unambiguous case when there is just one derivation per output, this reduces to the standard CRF definition.
+
+<hr/>
+## Training CRFs with `cdec`
+
+In contrast to most training objectives used in machine translation which attempt to maximize BLEU, CRFs training only "gives credit" to completely perfect outputs, all other outputs are considered "negative examples". Therefore, to use CRF training, your translation grammar must exactly be able to produce the reference translation. For machine translation this is not always possible, but for problems like part-of-speech tagging, where you are "translating" each word in the input into a sequence of NOUN, VERB, etc., it is not hard to guarantee that the output space will contain all possible labels.
 
 <hr/>
 
