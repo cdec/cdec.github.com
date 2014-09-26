@@ -3,6 +3,10 @@ layout: documentation
 title: cdec - Parameter learning
 ---
 
+A conditional random field (CRF) defines a conditional (given input <span>\\( x \\)</span>) distribution over structured outputs <span>\\( \boldsymbol{y} \in \mathcal{Y}(x) \\)</span>.
+
+<hr/>
+
 
 ## Further reading
 * [Phil Blunsom, Trevor Cohn, and Miles Osborne. 2008. A Discriminative Latent Variable Model for Statistical Machine Translation. In *Proc. ACL*.](http://www.aclweb.org/anthology/P/P08/P08-1024.pdf)

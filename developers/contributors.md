@@ -6,6 +6,9 @@ title: cdec - Contributors
 
 Many people have contributed to the `cdec` project including:
 
+  - [Austin Matthews](http://armatthews.com/)
+  - [Michael Denkowski](http://www.cs.cmu.edu/~mdenkows/)
+  - [Eva Schlinger](http://www.contrib.andrew.cmu.edu/~eschling/)
   - [Waleed Ammar](http://www.cs.cmu.edu/~wammar/)
   - [Paul Baltescu](https://www.cs.ox.ac.uk/people/paul.baltescu/)
   - [Phil Blunsom](http://www.cs.ox.ac.uk/people/phil.blunsom/)
