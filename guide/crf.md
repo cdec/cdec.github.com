@@ -3,9 +3,9 @@ layout: documentation
 title: cdec - Parameter learning
 ---
 
-A conditional random field (CRF) is a log-[linear model](../concepts/linear-models.html) of a conditional (given input <span>\\( x \\)</span>) probability distribution over structured outputs <span>\\( \boldsymbol{y} \in \mathcal{Y}(x) \\)</span>. CRFs are trained to maximize the conditional log likelihood of a set of training data by setting the [weights](../concepts/weights.html) appropriately. To prevent overfitting, a prior on norm of the weight vector is often used that encourages, e.g., small or sparse vectors.
+A conditional random field (CRF) is a log-[linear model](../concepts/linear-models.html) of a conditional (given input <span>\\( x \\)</span>) probability distribution over structured outputs <span>\\( \boldsymbol{y} \in \mathcal{Y}(x) \\)</span>. The [model parameters](../concepts/weights.html) in CRFs are trained to maximize the conditional log likelihood of a set of training data <span>\\( \{ x_i, \boldsymbo{y}_i  \}_{i=1}^n \\)</span>.
 
-In `cdec` every output is produced by some latent [derivation](../concepts/derivations.html). In fact, in general any output <span>\\( \boldsymbol{y} \\)</span> will be derivable via many different derivations <span>\\( \boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) \\)</span>.
+In `cdec` every output is produced by some latent [derivation](../concepts/derivations.html). Moreover, in contrast to many CRFs toolkits and tutorials, any output <span>\\( \boldsymbol{y} \\)</span> will in general be derivable via many different *latent* derivations <span>\\( \boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) \\)</span> (the number of derivations depends on the ambiguity of the translation space entailed by the translation grammar and [translation formalism](../concepts/formalism.html); it is possible to construct grammars for some problems, like sequence labeling, that produce *unambiguous* derivations of every output).
 
 <hr/>
 
