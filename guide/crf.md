@@ -12,7 +12,7 @@ Because outputs in `cdec` may be associated with many derivations, the probabili
 <hr/>
 ## Training CRFs with `cdec`
 
-In contrast to most training objectives used in machine translation which attempt to maximize BLEU, CRFs training only "gives credit" to completely perfect outputs, all other outputs are considered "negative examples". Therefore, to use CRF training, your translation grammar must exactly be able to produce the reference translation. For machine translation this is not always possible, but for problems like part-of-speech tagging, where you are "translating" each word in the input into a sequence of NOUN, VERB, etc., it is not hard to guarantee that the output space will contain all possible labels.
+In contrast to most training objectives used in machine translation which attempt to maximize BLEU, CRFs training only "gives credit" to completely perfect outputs, all other outputs are considered "negative examples". Therefore, to use CRF training, your translation grammar must exactly be able to produce the reference translation. For some machine translation formalisms with heuristically learned translation rules (for example, [hiero](../concepts/hiero.html)), this is not always possible. But, for problems like part-of-speech tagging, where you are "translating" each word in the input into a sequence of NOUN, VERB, etc., it is not hard to guarantee that the output space will contain all possible labels.
 
 <hr/>
 
