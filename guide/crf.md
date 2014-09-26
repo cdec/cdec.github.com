@@ -7,7 +7,7 @@ A conditional random field (CRF) is a log-[linear model](../concepts/linear-mode
 
 In `cdec` every output is produced by some latent [derivation](../concepts/derivations.html). Moreover, any output <span>\\( \boldsymbol{y} \\)</span> will in general be derivable via many different *latent* derivations <span>\\( \boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) \\)</span> (note: the exact number of derivations depends on the ambiguity of the translation space entailed by the translation grammar and [translation formalism](../concepts/formalism.html); it is possible to construct grammars for some problems, like sequence labeling, that produce *unambiguous* derivations of every output).
 
-Because an output in `cdec` is associated with potentially many derivations, the probability of some output <span>\\( \boldsymbol{y} \\)</span> is defined to be the *marginal* probability, over all derivations, <span>\\( p(\boldsymbol{y} \mid x) = \sum_{z} p(z) \\)</span>.
+Because an output in `cdec` is associated with potentially many derivations, the probability of some output <span>\\( \boldsymbol{y} \\)</span> is defined to be the *marginal* probability, over all derivations that produce that output, <span>\\( p(\boldsymbol{y} \mid x) = \sum_{\boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) } p(\boldsymbol{z} \mid x) \\)</span>.
 
 <hr/>
 
