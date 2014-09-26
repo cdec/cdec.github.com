@@ -5,7 +5,7 @@ title: cdec - Parameter learning
 
 A conditional random field (CRF) is a log-[linear model](../concepts/linear-models.html) of a conditional (given input <span>\\( x \\)</span>) probability distribution over structured outputs <span>\\( \boldsymbol{y} \in \mathcal{Y}(x) \\)</span>. CRFs are trained to maximize the conditional log likelihood of a set of training data by setting the [weights](../concepts/weights.html) appropriately. To prevent overfitting, a prior on norm of the weight vector is often used that encourages, e.g., small or sparse vectors.
 
-In `cdec` every output <span>\\( \boldsymbol{y} \\)</span> is associated with one or more latent [derivations](../concepts/derivations.html) <span>\\( \boldsymbol{z} \\)</span>.
+In `cdec` every output is produced by some latent [derivation](../concepts/derivations.html). In fact, in general any output <span>\\( \boldsymbol{y} \\)</span> will be derivable via many different derivations <span>\\( \boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) \\)</span>.
 
 <hr/>
 
