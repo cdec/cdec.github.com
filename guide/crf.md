@@ -5,7 +5,9 @@ title: cdec - Parameter learning
 
 A conditional random field (CRF) is a log-[linear model](../concepts/linear-models.html) of a conditional (given input <span>\\( x \\)</span>) probability distribution over structured outputs <span>\\( \boldsymbol{y} \in \mathcal{Y}(x) \\)</span>. The [model parameters](../concepts/weights.html) in CRFs are trained to maximize the conditional log likelihood of a set of training data <span>\\( \left\\{ (x_i, \boldsymbol{y}_i) \right\\}^n \\)</span>.
 
-In `cdec` every output is produced by some latent [derivation](../concepts/derivations.html). Moreover, in contrast to many CRFs toolkits and tutorials, any output <span>\\( \boldsymbol{y} \\)</span> will in general be derivable via many different *latent* derivations <span>\\( \boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) \\)</span> (the number of derivations depends on the ambiguity of the translation space entailed by the translation grammar and [translation formalism](../concepts/formalism.html); it is possible to construct grammars for some problems, like sequence labeling, that produce *unambiguous* derivations of every output).
+In `cdec` every output is produced by some latent [derivation](../concepts/derivations.html). Moreover, any output <span>\\( \boldsymbol{y} \\)</span> will in general be derivable via many different *latent* derivations <span>\\( \boldsymbol{z} \in \mathcal{D}(\boldsymbol{y}) \\)</span> (note: the exact number of derivations depends on the ambiguity of the translation space entailed by the translation grammar and [translation formalism](../concepts/formalism.html); it is possible to construct grammars for some problems, like sequence labeling, that produce *unambiguous* derivations of every output).
+
+Because an output in `cdec` is associated with potentially many derivations, the probability of some output <span>\\( \boldsymbol{y} \\)</span> is defined to be the *marginal* probability, over all derivations, <span>\\( p(\boldsymbol{y} \mid x) = \sum_{z} p(z) \\)</span>.
 
 <hr/>
 
