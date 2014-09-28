@@ -24,12 +24,11 @@ This tutorial will guide you through the process of creating a Spanish-English [
 ## 1. Tokenize and lowercase the training, dev, and devtest data
 Estimated time: **~2 minutes**
 
-{% highlight bash %}
+{% highlight console %}
 ~/cdec/corpus/tokenize-anything.sh < training/news-commentary-v7.es-en | ~/cdec/corpus/lowercase.pl > nc.lc-tok.es-en
 ~/cdec/corpus/tokenize-anything.sh < dev/2010.es-en | ~/cdec/corpus/lowercase.pl > dev.lc-tok.es-en
 ~/cdec/corpus/tokenize-anything.sh < devtest/2011.es-en | ~/cdec/corpus/lowercase.pl > devtest.lc-tok.es-en
 {% endhighlight %}
-    
 
 Read more about the [data format](/guide/corpus.html) used for parallel corpora.
 
