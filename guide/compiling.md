@@ -34,7 +34,7 @@ Note: the Python extensions must be installed somewhere Python will look for the
 
 - A C++ compiler **that supports the [C++11 standard](http://www.stroustrup.com/C++11FAQ.html)**, for example [gcc](http://gcc.gnu.org/) or [Clang](http://clang.llvm.org/).
 - [Boost C++ libraries (version 1.44 or later)](http://www.boost.org/).
-    - If you build your own boost, you _must install it_ using `bjam install`.
+    - If you build your own boost, you _must install it_ using `bjam install` (this may require root access or configuring a nonstandard install location with `--prefix`).
     - Older versions of Boost may work, but problems have been reported on some platforms with older versions.
 - [GNU Flex](http://flex.sourceforge.net/)
 - [Python-2.7](http://docs.python.org/) is required to build the `pycdec` extensions
