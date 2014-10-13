@@ -2,4 +2,4 @@ markdown: rdiscount
 pygments: true
 baseurl:
 exclude: scratch
-current_version: 2014-06-15
+current_version: 2014-10-12
