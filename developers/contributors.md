@@ -6,6 +6,7 @@ title: cdec - Contributors
 
 Many people have contributed to the `cdec` project including:
 
+  - Ke Wu
   - [Austin Matthews](http://armatthews.com/)
   - [Michael Denkowski](http://www.cs.cmu.edu/~mdenkows/)
   - [Eva Schlinger](http://www.contrib.andrew.cmu.edu/~eschling/)
