@@ -32,12 +32,12 @@ Configuring and building the code looks *something* like this (depending on your
 - [Python-2.7](http://docs.python.org/) is required to build the `pycdec` extensions (optional)
 <hr/>
 # Optional software extensions
-The software in this section is optional. The extensions are configured with command line options to the `./configure` script prior to compilation.
+The software in this section is optional. The extensions are configured with command line options to the `cmake` command prior to compilation.
 
 <table>
 <tr>
-  <th style="width: 30%">Parameter</th>
-  <th style="width: 80%">Description</th>
+  <th style="width: 35%">Parameter</th>
+  <th style="width: 65%">Description</th>
 </tr>
 <tr>
   <td><code>-DMETEOR_JAR=/path/to/meteor.jar</code></td>
