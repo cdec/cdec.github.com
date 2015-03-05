@@ -15,8 +15,6 @@ This tutorial will guide you through the process of creating a Spanish-English [
 ## 0. Prerequisites
 
  - [Download and compile `cdec`](compiling.html)
-   - Make sure you build and install the `pycdec` Python language extensions to `cdec`
-   - This tutorial assumes you have either installed the `pycdec` extensions into your system's default location or that you have installed them into an isolated Python environment, e.g., using [virtualenv](https://pypi.python.org/pypi/virtualenv).
  - Download and untar [the training, development, and test data](http://data.cdec-decoder.org/cdec-spanish-demo.tar.gz) for this demo (16.7 MB)
 
 <hr/>
@@ -73,7 +71,6 @@ You can read more about [word alignment](/concepts/alignment.html) and the [`fas
 Estimated time: **5 seconds**
 
     ~/cdec/utils/atools -i training.es-en.fwd_align -j training.es-en.rev_align -c grow-diag-final-and > training.gdfa
-    
 
 **Exercises:**
 
@@ -85,7 +82,7 @@ Estimated time: **5 seconds**
 ## 5. Compile the training data
 Estimated time: **~1 minute**
 
-    python -m cdec.sa.compile -b training.es-en -a training.gdfa -c extract.ini -o training.sa
+    ~/cdec/extractor/sacompile -b training.es-en -a training.gdfa -c extract.ini -o training.sa
 
 This step compiles the parallel training data (in `training.es-en`) into a data structure called a [suffix array](http://en.wikipedia.org/wiki/Suffix_array) that enables very fast lookup of string matches. By representing the training data as a suffix array, it is possible to do a targeted extraction of rules for any input sentence, rather than extracting all rules licensed by the training data.
 
@@ -98,10 +95,10 @@ This step compiles the parallel training data (in `training.es-en`) into a data 
 ## 6. Extract grammars for the dev and devtest sets
 Estimated time: **15 minutes**
 
-    python -m cdec.sa.extract -c extract.ini -g dev.grammars -j 2 -z < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
-    python -m cdec.sa.extract -c extract.ini -g devtest.grammars -j 2 -z < devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
+    ~/cdec/extractor/extract -c extract.ini -g dev.grammars -t 2 -z < dev.lc-tok.es-en > dev.lc-tok.es-en.sgm
+    ~/cdec/extractor/extract -c extract.ini -g devtest.grammars -t 2 -z < devtest.lc-tok.es-en > devtest.lc-tok.es-en.sgm
 
-The `-j 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardware capabilities. The extraction process can be slow, so using more processors if they are available is recommended.
+The `-t 2` option tells the extractor to use 2 processors. This can be adjusted based on your hardware capabilities. The extraction process can be slow, so using more processors if they are available is generally recommended.
 
 The `-z` option tells the extractor to use gzip to compress the grammars. This is strongly recommended since the cdec grammar can read gzipped files. 
 
@@ -109,7 +106,7 @@ You can read more about [grammar extraction](grammar_extraction.html) and the [s
 
 The grammars extracted in this section are written to the `dev.grammars` and `devtest.grammars` directory; there is one grammar for each sentence in the dev and devtest sets, containing all rules that could potentially apply to that sentence. The following shows 5 rules extracted for the first sentence of the dev set (*la casa blanca ya ha anunciado que , al recibir el premio , hablará de la guerra afgana .*).
 
-    tail -5 dev.grammars/grammar.0 
+    zcat dev.grammars/grammar.0.gz | tail
 
     [X] ||| de la guerra [X,1] . ||| the war [X,1] . ||| EgivenFCoherent=1.69896996021 SampleCountF=2.39967370033 CountEF=0.778151273727 MaxLexFgivenE=1.23959636688 MaxLexEgivenF=0.382706820965 IsSingletonF=0.0 IsSingletonFE=0.0 ||| 0-0 1-0 2-1 4-3
     [X] ||| de la guerra [X,1] . ||| from the [X,1] war . ||| EgivenFCoherent=2.39793992043 SampleCountF=2.39967370033 CountEF=0.301030009985 MaxLexFgivenE=0.895682394505 MaxLexEgivenF=1.93757390976 IsSingletonF=0.0 IsSingletonFE=1.0 ||| 0-0 1-1 2-3 4-4
@@ -129,7 +126,7 @@ You can read more about [the cdec grammar format](/guide/grammar-format.html) to
 <hr/>
 
 ## 7. Build the target language model
-Estimated time: **1 minute**
+Estimated time: **30 seconds**
 
     ~/cdec/corpus/cut-corpus.pl 2 training.es-en | ~/cdec/klm/lm/builder/lmplz --order 3 > nc.lm
 
@@ -146,7 +143,7 @@ Estimated time: **5 seconds**
 
     ~/cdec/klm/lm/build_binary nc.lm nc.klm
 
-This compiles the language model produced by `ngram-count` into an efficient binary format that can shared in memory among multiple processes running on the same system.
+This compiles the language model produced by `lmplz` into an efficient binary format that can shared in memory among multiple processes running on the same system.
 
 <hr/>
 
@@ -166,7 +163,7 @@ Create a `cdec.ini` file with the following contents, making sure to substitute 
 <hr/>
 
 ## 10. Tune the system parameters using development data with MIRA
-Estimated time: **20-40 minutes**
+Estimated time: **15-30 minutes**
 
     ~/cdec/training/mira/mira.py -d dev.lc-tok.es-en.sgm -t devtest.lc-tok.es-en.sgm -c cdec.ini -j 2
 
